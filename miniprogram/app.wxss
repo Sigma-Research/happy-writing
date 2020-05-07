@@ -3,14 +3,28 @@ page {
   background: #f6f6f6;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 page .container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+page .container .section {
+  display: flex;
+  flex-direction: column;
+}
+page .container .section .section-title {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  margin: 20rpx 0;
+}
+page .container .section .section-content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=app.wxss.map */
