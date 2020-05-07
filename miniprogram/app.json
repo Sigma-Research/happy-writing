@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/courseDetail/courseDetail",
+
     "pages/index/index",
     "pages/course/course",
-    "pages/profile/profile",
-    "pages/courseDetail/courseDetail"
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
