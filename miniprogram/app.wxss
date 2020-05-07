@@ -1,7 +1,16 @@
 /**app.wxss**/
-.container {
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+page .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
 }
+
+/*# sourceMappingURL=app.wxss.map */
