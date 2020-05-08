@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  toHomeworkDetail: () => {
+    wx.navigateTo({
+      url: '../homeworkDetail/homeworkDetail'
+    })
   }
 })

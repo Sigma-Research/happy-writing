@@ -21,7 +21,7 @@
         </scroll-view>
         <view class="section-content">
             <view>
-                <view class="alertHomeworkButton" bindtap="test">已完成，点击修改作业</view>
+                <view class="alertHomeworkButton">已完成，点击修改作业</view>
             </view>
             <view class="hint">如何添加作业</view>
         </view>

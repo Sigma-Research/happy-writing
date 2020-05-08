@@ -20,11 +20,8 @@
                     <view class="section-subtitle">课程标题</view>
                     <view class="section-date">2020/2/21</view>
                     <view class="section-state">
-
                             <image class="learned-icon"></image>
                             学习已完成
-
-
                             <image class="committed-icon"></image>
                             作业已提交
                     </view>
@@ -37,11 +34,8 @@
                     <view class="section-subtitle">课程标题</view>
                     <view class="section-date">2020/2/21</view>
                     <view class="section-state">
-
                         <image class="learned-icon"></image>
                         学习已完成
-
-
                         <image class="committed-icon"></image>
                         作业已提交
                     </view>
