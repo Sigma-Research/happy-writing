@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/homeworkDetail/homeworkDetail",
     "pages/index/index",
     "pages/courseLearn/courseLearn",
     "pages/courseDetail/courseDetail",
