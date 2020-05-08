@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/course/course",
     "pages/index/index",
+    "pages/course/course",
     "pages/courseDetail/courseDetail",
+    "pages/coursePoster/coursePoster",
     "pages/profile/profile"
   ],
   "window": {

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    signUpButtonState: true
+
   },
 
   /**
@@ -62,38 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  toSignUp () {
-    this.setData({
-      signUpButtonState: !this.data.signUpButtonState
-    })
-  },
-  closeSignUpForm () {
-    let that = this
-    wx.showModal({
-      title: '温馨提示',
-      content: '不填写验证码助教老师无法联系到您，会使您享受不到优质服务',
-      cancelText: '狠心放弃',
-      confirmText: '继续填写',
-      confirmColor: '#192e4d',
-      success(res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          that.setData({
-            signUpButtonState: true
-          })
-        }
-      }
-    })
-  },
-  getPhoneNumber (e) {
-    console.log(e.detail.errMsg)
-    console.log(e.detail.iv)
-    console.log(e.detail.encryptedData)
-  },
-  handleContact (e) {
-    console.log(e.detail.path)
-    console.log(e.detail.query)
   }
 })
