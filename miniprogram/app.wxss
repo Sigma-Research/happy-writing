@@ -17,9 +17,13 @@ page .container .section {
 }
 page .container .section .section-title {
   font-size: 16px;
-  color: black;
   font-weight: bold;
   margin: 20rpx 0;
+}
+page .container .section .section-title .section-subtitle {
+  display: inline;
+  font-size: 14px;
+  font-weight: normal;
 }
 page .container .section .section-content {
   width: 100%;

@@ -63,12 +63,12 @@ Page({
   onShareAppMessage: function () {
 
   },
-  toSignUp: function () {
+  toSignUp () {
     this.setData({
       signUpButtonState: !this.data.signUpButtonState
     })
   },
-  closeSignUpForm: function () {
+  closeSignUpForm () {
     let that = this
     wx.showModal({
       title: '温馨提示',
@@ -86,5 +86,14 @@ Page({
         }
       }
     })
+  },
+  getPhoneNumber (e) {
+    console.log(e.detail.errMsg)
+    console.log(e.detail.iv)
+    console.log(e.detail.encryptedData)
+  },
+  handleContact (e) {
+    console.log(e.detail.path)
+    console.log(e.detail.query)
   }
 })

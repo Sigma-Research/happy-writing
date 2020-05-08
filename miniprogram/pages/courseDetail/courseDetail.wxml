@@ -5,7 +5,11 @@
         <view class="hint">
             限时免费领取 777 元 【精品课】 剩余 12:59:59
         </view>
-        <button size="mini" class="table-button" bindtap="toSignUp">立即报名</button>
+        <button open-type="getPhoneNumber"
+                bindgetphonenumber="getPhoneNumber"
+                size="mini"
+                class="table-button"
+                bindtap="toSignUp">立即报名</button>
     </view>
     <view class="footer signUpForm" wx:else>
         <view class="close" bindtap="closeSignUpForm">x</view>
@@ -17,6 +21,9 @@
         <view class="wrapper">
             <input class="form-input" type="digit" value="点击输入验证码"></input>
         </view>
-        <button class="signUpButton" size="mini">报名</button>
+        <button open-type="contact"
+                bindcontact="handleContact"
+                class="signUpButton"
+                size="mini">报名</button>
     </view>
 </view>
