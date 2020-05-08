@@ -34,6 +34,10 @@
                        class="homework-video">
                 </video>
             </view>
+            <view class="section-subtitle">我的作业</view>
+            <view class="myHomework">
+                <view class="homeworkButton">点击添加作业</view>
+            </view>
             <view class="section-subtitle">作业交流</view>
             <view class="homeworkDisplay">
                 <view class="homework-item">
