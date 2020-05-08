@@ -6,7 +6,7 @@
             <view class="section-subtitle">已报名正在学习课程</view>
         </view>
         <view class="section-content">
-            <view class="enrolled-course">
+            <view class="enrolled-course" bindtap="toCourseDetail">
                 <view class="course-title">课程主标题</view>
                 <view class="course-date">2020/2/21 - 2020/4/30</view>
                 <view class="course-lecturer">
@@ -20,7 +20,7 @@
                     5 节课待完成
                 </view>
             </view>
-            <view class="enrolled-course">
+            <view class="enrolled-course" bindtap="toCourseDetail">
                 <view class="course-title">课程主标题</view>
                 <view class="course-date">2020/2/21 - 2020/4/30</view>
                 <view class="course-lecturer">

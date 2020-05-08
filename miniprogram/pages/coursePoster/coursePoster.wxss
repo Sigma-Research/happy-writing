@@ -1,4 +1,4 @@
-/* miniprogram/pages/courseDetail/courseDetail.wxss */
+/* miniprogram/pages/courseDetail/courseDetail.sass */
 .container .poster {
   width: 750rpx;
   height: 1500rpx;
@@ -78,4 +78,4 @@
   padding: 20rpx;
 }
 
-/*# sourceMappingURL=courseDetail.wxss.map */
+/*# sourceMappingURL=coursePoster.wxss.map */

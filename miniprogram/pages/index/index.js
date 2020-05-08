@@ -60,7 +60,7 @@ Page({
       }
     })
   },
-  toCourseDetail: () => {
+  toCoursePoster: () => {
     wx.navigateTo({
       url: '../coursePoster/coursePoster'
     })

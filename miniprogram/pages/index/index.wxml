@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-    <image class="carousel" bindtap="toCourseDetail"></image>
+    <image class="carousel" bindtap="toCoursePoster"></image>
     <view class="section" id="performance">
         <view class="section-title">学员表现</view>
         <view class="section-content">

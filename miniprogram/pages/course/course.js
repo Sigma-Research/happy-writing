@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  toCourseDetail: () => {
+    wx.navigateTo({
+      url: '../courseDetail/courseDetail'
+    })
   }
 })
