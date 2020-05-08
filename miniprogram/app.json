@@ -1,10 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/courseLearn/courseLearn",
     "pages/courseDetail/courseDetail",
     "pages/course/course",
-    "pages/coursePoster/coursePoster",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/coursePoster/coursePoster"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

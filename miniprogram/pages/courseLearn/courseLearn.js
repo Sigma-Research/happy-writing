@@ -1,4 +1,4 @@
-// miniprogram/pages/courseDetail/courseDetail.js
+// miniprogram/pages/courseLearn/courseLearn.js
 Page({
 
   /**
@@ -62,19 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  toCourseLearn: () => {
-    wx.navigateTo({
-      url: '../courseLearn/courseLearn'
-    })
-  },
-  learnDisable() {
-    wx.showModal({
-      title: '温馨提示',
-      content: '完成上节课的课程学习才能继续本节课程的学习',
-      confirmText: '知道了',
-      showCancel: false,
-      confirmColor: '#192e4d',
-    })
   }
 })

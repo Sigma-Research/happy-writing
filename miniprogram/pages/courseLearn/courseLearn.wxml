@@ -1,0 +1,61 @@
+<!--miniprogram/pages/courseLearn/courseLearn.wxml-->
+<view class="container">
+    <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+           class="course-video">
+    </video>
+    <view class="section">
+        <view class="section-title">课程主标题</view>
+        <view class="section-content">
+            <view class="course-date">2020/2/21 - 2020/4/30</view>
+            <view class="course-lecturer">
+                <view class="lecturer-item">
+                    <view class="lecturer-avatar"></view>
+                    <view class="lecturer-info">
+                        <view>王先生</view>
+                        <view>主讲老师</view>
+                    </view>
+                </view>
+                <view class="lecturer-item">
+                    <view class="lecturer-avatar"></view>
+                    <view class="lecturer-info">
+                        <view>王先生</view>
+                        <view>主讲老师</view>
+                    </view>
+                </view>
+            </view>
+            <view class="section-subtitle">书写展示</view>
+            <view class="writingDisplay"></view>
+            <view class="section-subtitle">作业练习</view>
+            <view class="homeworkExercise">
+                作业描述作业描述作业描述作业描述作业描述作业描述作业。描述作业描述作业描述，作业描述作业描述作业描述作业描述作业描述作业，描述作业描述作业描述作业描述作业描述作业描述；
+                <audio class="audioButton" controls  src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"></audio>
+
+                <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+                       class="homework-video">
+                </video>
+            </view>
+            <view class="section-subtitle">作业交流</view>
+            <view class="homeworkDisplay">
+                <view class="homework-item">
+                    <image class="item-image"></image>
+                    <view class="item-name">刘超</view>
+                    <view class="item-date">2020.2.12</view>
+                </view>
+                <view class="homework-item">
+                    <image class="item-image"></image>
+                    <view class="item-name">刘超</view>
+                    <view class="item-date">2020.2.12</view>
+                </view>
+                <view class="homework-item">
+                    <image class="item-image"></image>
+                    <view class="item-name">刘超</view>
+                    <view class="item-date">2020.2.12</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="operationButton">
+        <view class="button">上一节</view>
+        <view class="button">下一节</view>
+    </view>
+</view>
