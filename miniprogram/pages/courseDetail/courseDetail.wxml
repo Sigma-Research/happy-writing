@@ -63,42 +63,9 @@
                         作业已提交
                     </view>
                 </view>
-                <view class="section-startButton">去学习</view>
+                <view class="section-startButton disabled">去学习</view>
             </view>
-            <view class="course-section">
-                <view class="section-id">1</view>
-                <view class="section-detail">
-                    <view class="section-subtitle">课程标题</view>
-                    <view class="section-date">2020/2/21</view>
-                    <view class="section-state">
 
-                        <image class="learned-icon"></image>
-                        学习已完成
-
-
-                        <image class="committed-icon"></image>
-                        作业已提交
-                    </view>
-                </view>
-                <view class="section-startButton">去学习</view>
-            </view>
-            <view class="course-section">
-                <view class="section-id">1</view>
-                <view class="section-detail">
-                    <view class="section-subtitle">课程标题</view>
-                    <view class="section-date">2020/2/21</view>
-                    <view class="section-state">
-
-                        <image class="learned-icon"></image>
-                        学习已完成
-
-
-                        <image class="committed-icon"></image>
-                        作业已提交
-                    </view>
-                </view>
-                <view class="section-startButton">去学习</view>
-            </view>
 
         </view>
     </view>

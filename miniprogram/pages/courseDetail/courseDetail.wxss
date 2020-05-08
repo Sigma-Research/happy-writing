@@ -78,5 +78,8 @@
   color: #fff;
   border-radius: 15rpx;
 }
+.container .course .course-section .disabled {
+  background-color: #b3c7e6;
+}
 
 /*# sourceMappingURL=courseDetail.wxss.map */
