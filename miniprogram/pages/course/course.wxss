@@ -64,6 +64,9 @@
   height: 72rpx;
   margin-right: 16rpx;
 }
+.container .enrolled .course .course-info .course-lecturer .lecturer-info .gray, .container .unregistered .course .course-info .course-lecturer .lecturer-info .gray {
+  color: #999896;
+}
 .container .enrolled .course .course-info .course-progress, .container .unregistered .course .course-info .course-progress {
   background-color: #fff8e8;
   border-radius: 24rpx;

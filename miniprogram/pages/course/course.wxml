@@ -13,8 +13,7 @@
                         <image class="lecturer-avatar"></image>
                         <view class="lecturer-info">
                             <view>王先生</view>
-                            <view>主讲老师</view>
-                        </view>
+                            <view class=".gray">主讲老师</view>                        </view>
                     </view>
                     <view class="course-progress">
                         5 节课待完成
@@ -30,12 +29,12 @@
                         <image class="lecturer-avatar"></image>
                         <view class="lecturer-info">
                             <view>王先生</view>
-                            <view>主讲老师</view>
+                            <view class=".gray">主讲老师</view>
                         </view>
                         <image class="lecturer-avatar"></image>
                         <view class="lecturer-info">
                             <view>王先生</view>
-                            <view>主讲老师</view>
+                            <view class="gray">主讲老师</view>
                         </view>
                     </view>
                     <view class="course-progress">
