@@ -42,9 +42,7 @@
                     </view>
                 </view>
             </view>
-
         </view>
-        <view class="noCourse">暂无报名任何课程，挑选以下课程进行报名</view>
     </view>
     <view class="section unregistered">
         <view class="section-title">未报名</view>
@@ -88,4 +86,5 @@
             </view>
         </view>
     </view>
+    <view class="noCourse">暂无报名任何课程，挑选以下课程进行报名</view>
 </view>

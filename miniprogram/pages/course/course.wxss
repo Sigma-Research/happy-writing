@@ -3,9 +3,10 @@
   background-color: #fafafa;
 }
 .container .noCourse {
-  font-size: 12px;
+  font-size: 28rpx;
+  color: #666564;
   text-align: center;
-  padding: 40rpx;
+  padding: 48rpx;
 }
 .container .enrolled, .container .unregistered {
   width: 670rpx;
