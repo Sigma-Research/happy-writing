@@ -1,6 +1,6 @@
 /**app.wxss**/
 page {
-  background: #f6f6f6;
+  background: #fafafa;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,9 +16,9 @@ page .container .section {
   flex-direction: column;
 }
 page .container .section .section-title {
-  font-size: 16px;
+  font-size: 40rpx;
   font-weight: bold;
-  margin: 20rpx 0;
+  margin: 48rpx 0 16rpx 0;
 }
 page .container .section .section-title .section-subtitle {
   display: inline;

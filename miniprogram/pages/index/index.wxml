@@ -5,7 +5,11 @@
         <view class="section-title">学员表现</view>
         <view class="section-content">
             <view class="article">
-
+                <image class="article-image"></image>
+                <view class="article-content">
+                    <view class="article-title">书法提升的秘诀</view>
+                    <view class="article-subtitle">点击查看优秀学员练习心得</view>
+                </view>
             </view>
         </view>
     </view>
@@ -13,31 +17,39 @@
         <view class="section-title">写字广场</view>
         <view class="section-content">
             <view class="work">
-                <image class="work-image">
-
-                </image>
+                <image class="work-image"></image>
                 <view class="work-detail">
-                    <view class="detail-info">
+                    <view class="detail-student">
                         <view class="info-avatar"></view>
                         <view class="info-name">刘超</view>
                     </view>
-                    <view>共上课练字 32 天</view>
-                    <view>累计上墙 3 次</view>
-                    <view>由王老师推荐上墙</view>
+                    <view class="detail-content">共上课练字 <view class="highlight">32</view> 天</view>
+                    <view class="detail-content">累计上墙 <view class="highlight">3</view> 次</view>
+                    <view class="detail-content">由王老师推荐上墙</view>
                 </view>
             </view>
             <view class="work">
-                <image class="work-image">
-
-                </image>
+                <image class="work-image"></image>
                 <view class="work-detail">
-                    <view class="detail-info">
+                    <view class="detail-student">
                         <view class="info-avatar"></view>
                         <view class="info-name">刘超</view>
                     </view>
-                    <view>共上课练字 32 天</view>
-                    <view>累计上墙 3 次</view>
-                    <view>由王老师推荐上墙</view>
+                    <view class="detail-content">共上课练字 <view class="highlight">32</view> 天</view>
+                    <view class="detail-content">累计上墙 <view class="highlight">3</view> 次</view>
+                    <view class="detail-content">由王老师推荐上墙</view>
+                </view>
+            </view>
+            <view class="work">
+                <image class="work-image"></image>
+                <view class="work-detail">
+                    <view class="detail-student">
+                        <view class="info-avatar"></view>
+                        <view class="info-name">刘超</view>
+                    </view>
+                    <view class="detail-content">共上课练字 <view class="highlight">32</view> 天</view>
+                    <view class="detail-content">累计上墙 <view class="highlight">3</view> 次</view>
+                    <view class="detail-content">由王老师推荐上墙</view>
                 </view>
             </view>
         </view>

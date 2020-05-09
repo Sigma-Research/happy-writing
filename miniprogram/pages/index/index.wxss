@@ -1,48 +1,86 @@
 /**index.wxss**/
 .container .carousel {
+  margin-top: 48rpx;
   background-color: #799ed2;
-  width: 710rpx;
-  height: 375rpx;
+  width: 670rpx;
+  height: 336rpx;
+  border-radius: 8rpx;
 }
 .container #performance .article {
-  width: 710rpx;
-  height: 275rpx;
-  background-color: #b3c7e6;
+  width: 670rpx;
+  height: 164rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container #performance .article .article-image {
+  width: 112rpx;
+  height: 112rpx;
+  border-radius: 15rpx;
+  margin-right: 16rpx;
+  margin-left: 32rpx;
+  background-color: #799ed2;
+}
+.container #performance .article .article-content .article-title {
+  font-size: 32rpx;
+  font-weight: bolder;
+  margin-bottom: 16rpx;
+}
+.container #performance .article .article-content .article-subtitle {
+  font-size: 28rpx;
+  color: #666564;
 }
 .container #square .work {
   background-color: #fff;
-  width: 710rpx;
-  height: 375rpx;
+  width: 670rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-  margin-bottom: 20rpx;
+  margin-bottom: 32rpx;
 }
 .container #square .work .work-image {
   background-color: #2d5386;
   width: 236rpx;
-  height: 300rpx;
+  height: 236rpx;
+  margin: 32rpx;
+  border-radius: 20rpx;
 }
 .container #square .work .work-detail {
-  font-size: 14px;
-  height: 300rpx;
+  height: 236rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.container #square .work .work-detail .detail-info {
+.container #square .work .work-detail .detail-student {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
 }
-.container #square .work .work-detail .detail-info .info-avatar {
-  width: 85rpx;
-  height: 85rpx;
+.container #square .work .work-detail .detail-student .info-avatar {
+  width: 64rpx;
+  height: 64rpx;
   border-radius: 50%;
   background-color: #192e4d;
-  margin-right: 30rpx;
+  margin-right: 16rpx;
+}
+.container #square .work .work-detail .detail-student .info-name {
+  font-size: 32rpx;
+  color: #1A1918;
+}
+.container #square .work .work-detail .detail-content {
+  font-size: 24rpx;
+  color: #666564;
+}
+.container #square .work .work-detail .detail-content .highlight {
+  color: #F2AA00;
+  font-size: 32rpx;
+  font-weight: bolder;
+  display: inline;
 }
 
 /*# sourceMappingURL=index.wxss.map */
