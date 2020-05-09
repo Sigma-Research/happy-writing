@@ -69,7 +69,7 @@
                     <view class="course-title">课程主标题</view>
                     <view class="course-subtitle">课程副标题</view>
                     <view class="course-price">
-                        ￥29.99
+                        <view class="small">￥</view>29.99
                         <view class="previous">￥299</view>
                     </view>
                 </view>
@@ -81,7 +81,7 @@
                     <view class="course-title">课程主标题</view>
                     <view class="course-subtitle">课程副标题</view>
                     <view class="course-price">
-                        ￥29.99
+                        <view class="small">￥</view>29.99
                         <view class="previous">￥299</view>
                     </view>
                 </view>

@@ -86,6 +86,10 @@
   color: #FF5123;
   font-weight: bold;
 }
+.container .unregistered .course .course-price .small {
+  font-size: 24rpx;
+  display: inline;
+}
 .container .unregistered .course .course-price .previous {
   font-size: 24rpx;
   color: #999896;
