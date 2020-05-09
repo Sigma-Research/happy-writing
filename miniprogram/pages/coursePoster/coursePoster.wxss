@@ -1,12 +1,10 @@
 /* miniprogram/pages/courseDetail/courseDetail.sass */
 .container .poster {
   width: 750rpx;
-  height: 1500rpx;
+  height: 2000rpx;
   background-image: linear-gradient(#799ed2, #2d5186);
 }
 .container .footer {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   width: 100%;
   background-color: #ffffff;
   position: fixed;
@@ -15,22 +13,31 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  font-size: 14px;
-}
-.container .signUpButton {
-  height: 181rpx;
+  font-size: 28rpx;
 }
 .container .signUpButton .hint {
+  padding: 20rpx;
+  width: 750rpx;
   text-align: center;
+  background-color: #f6dea6;
+}
+.container .signUpButton .hint .highlight {
   font-weight: bold;
+  font-size: 36rpx;
+  color: #FF5123;
+  display: inline;
 }
 .container .signUpButton .table-button {
-  height: 60rpx;
-  line-height: 60rpx;
-  background-color: #2d5386;
-  font-size: 13px;
+  height: 80rpx;
+  width: 320rpx;
+  line-height: 80rpx;
+  margin: 16rpx;
+  background-color: #FFBA19;
+  box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60;
+  font-size: 28rpx;
   color: #fff;
   font-weight: normal;
+  border-radius: 40rpx;
 }
 .container .signUpForm {
   height: 33vh;

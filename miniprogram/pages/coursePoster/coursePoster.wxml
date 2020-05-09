@@ -3,7 +3,7 @@
     <image class="poster"></image>
     <view class="footer signUpButton" wx:if="{{signUpButtonState}}">
         <view class="hint">
-            限时免费领取 777 元 【精品课】 剩余 12:59:59
+            限时免费领取 <view class="highlight">777</view> 元 【精品课】 剩余 <view class="highlight">12:59:59</view>
         </view>
         <button open-type="getPhoneNumber"
                 bindgetphonenumber="getPhoneNumber"
