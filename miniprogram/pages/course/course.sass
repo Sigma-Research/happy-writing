@@ -1,74 +1,88 @@
 /* miniprogram/pages/course/course.wxss */
 .container
-  color: #192e4d
+  background-color: #fafafa
   .noCourse
     font-size: 12px
     text-align: center
     padding: 40rpx
-  .enrolled
-    width: 710rpx
-    .enrolled-course
-      width: 710rpx
-      margin-bottom: 20rpx
-      padding: 20rpx
+  .enrolled,.unregistered
+    width: 670rpx
+    margin-bottom: 16rpx
+    .course
+      width: 670rpx
+      margin-top: 32rpx
+      background-color: #fff
+      border-radius: 20rpx
+      box-shadow: 0 20rpx 40rpx -8rpx #00000010
       box-sizing: border-box
-      background-color: #b3c7e6
-      border-radius: 10rpx
-      .course-title
-        font-weight: bold
-      .course-date
-        font-size: 14px
-        margin: 20rpx 0
-        color: #2d5186
-      .course-lecturer
-        display: flex
-        flex-direction: row
-        align-items: center
-        height: 105rpx
-        .lecturer-avatar
-          width: 85rpx
-          height: 85rpx
-          border-radius: 50%
-          border: #2d5186 1px solid
-          margin: 0 20rpx
-        .lecturer-info
-          font-size: 14px
-          color: #2d5386
-          display: flex
-          flex-direction: column
-          justify-content: space-between
-          height: 85rpx
-      .course-progress
-        font-size: 12px
-        color: #fff
-        margin-top: 10rpx
-  .unregistered
-    width: 710rpx
-    .unregistered-course
-      width: 710rpx
-      margin-bottom: 20rpx
+      padding: 32rpx
       display: flex
       flex-direction: row
-      align-items: center
-      background-color: #fff
-      padding: 20rpx
-      box-sizing: border-box
       .course-image
-        width: 175rpx
-        height: 200rpx
-        background-color: #192e4d
-        margin-right: 30rpx
-      .course-title
+        width: 160rpx
+        height: 160rpx
+        border-radius: 15rpx
+        background-color: #b3c7e6
+        margin-right: 32rpx
+      .course-info
+        height: 260rpx
         display: flex
         flex-direction: column
-        justify-content: space-around
-        height: 200rpx
-        flex: 1
+        justify-content: space-between
+        .course-title
+          font-size: 32rpx
+          font-weight: bold
+        .course-date
+          font-size: 24rpx
+          color: #999896
+        .course-lecturer
+          display: flex
+          flex-direction: row
+          align-items: center
+          color: 24rpx
+          .lecturer-avatar
+            width: 64rpx
+            height: 64rpx
+            border-radius: 50%
+            background-color: #192e4d
+            margin-right: 16rpx
+          .lecturer-info
+            font-size: 24rpx
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            height: 72rpx
+            margin-right: 16rpx
+        .course-progress
+          background-color: #fff8e8
+          border-radius: 24rpx
+          width: 214rpx
+          height: 40rpx
+          font-size: 24rpx
+          color: #F2AA00
+          text-align: center
+  .unregistered
+      .course
+        .course-info
+          flex: 1
+          height: 160rpx
         .course-subtitle
-          font-size: 14px
-          color: #2d5186
-      .course-button
-        padding: 20rpx
-        background-color: #799ed2
-        border-radius: 5px
-        color: #fff
+          color: #666564
+          font-size: 28rpx
+        .course-price
+          font-size: 32rpx
+          color: #FF5123
+          font-weight: bold
+          .previous
+            font-size: 24rpx
+            color: #999896
+            text-decoration: line-through
+            display: inline
+        .course-button
+          align-self: flex-end
+          background-color: #FFBA19
+          border-radius: 24rpx
+          font-size: 24rpx
+          color: #ffffff
+          padding: 6rpx 30rpx
+          box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60

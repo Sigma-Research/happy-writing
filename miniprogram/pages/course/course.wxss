@@ -1,92 +1,105 @@
 /* miniprogram/pages/course/course.wxss */
 .container {
-  color: #192e4d;
+  background-color: #fafafa;
 }
 .container .noCourse {
   font-size: 12px;
   text-align: center;
   padding: 40rpx;
 }
-.container .enrolled {
-  width: 710rpx;
+.container .enrolled, .container .unregistered {
+  width: 670rpx;
+  margin-bottom: 16rpx;
 }
-.container .enrolled .enrolled-course {
-  width: 710rpx;
-  margin-bottom: 20rpx;
-  padding: 20rpx;
+.container .enrolled .course, .container .unregistered .course {
+  width: 670rpx;
+  margin-top: 32rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
   box-sizing: border-box;
-  background-color: #b3c7e6;
-  border-radius: 10rpx;
-}
-.container .enrolled .enrolled-course .course-title {
-  font-weight: bold;
-}
-.container .enrolled .enrolled-course .course-date {
-  font-size: 14px;
-  margin: 20rpx 0;
-  color: #2d5186;
-}
-.container .enrolled .enrolled-course .course-lecturer {
+  padding: 32rpx;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  height: 105rpx;
 }
-.container .enrolled .enrolled-course .course-lecturer .lecturer-avatar {
-  width: 85rpx;
-  height: 85rpx;
-  border-radius: 50%;
-  border: #2d5186 1px solid;
-  margin: 0 20rpx;
+.container .enrolled .course .course-image, .container .unregistered .course .course-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 15rpx;
+  background-color: #b3c7e6;
+  margin-right: 32rpx;
 }
-.container .enrolled .enrolled-course .course-lecturer .lecturer-info {
-  font-size: 14px;
-  color: #2d5386;
+.container .enrolled .course .course-info, .container .unregistered .course .course-info {
+  height: 260rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 85rpx;
 }
-.container .enrolled .enrolled-course .course-progress {
-  font-size: 12px;
-  color: #fff;
-  margin-top: 10rpx;
+.container .enrolled .course .course-info .course-title, .container .unregistered .course .course-info .course-title {
+  font-size: 32rpx;
+  font-weight: bold;
 }
-.container .unregistered {
-  width: 710rpx;
+.container .enrolled .course .course-info .course-date, .container .unregistered .course .course-info .course-date {
+  font-size: 24rpx;
+  color: #999896;
 }
-.container .unregistered .unregistered-course {
-  width: 710rpx;
-  margin-bottom: 20rpx;
+.container .enrolled .course .course-info .course-lecturer, .container .unregistered .course .course-info .course-lecturer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: #fff;
-  padding: 20rpx;
-  box-sizing: border-box;
+  color: 24rpx;
 }
-.container .unregistered .unregistered-course .course-image {
-  width: 175rpx;
-  height: 200rpx;
+.container .enrolled .course .course-info .course-lecturer .lecturer-avatar, .container .unregistered .course .course-info .course-lecturer .lecturer-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
   background-color: #192e4d;
-  margin-right: 30rpx;
+  margin-right: 16rpx;
 }
-.container .unregistered .unregistered-course .course-title {
+.container .enrolled .course .course-info .course-lecturer .lecturer-info, .container .unregistered .course .course-info .course-lecturer .lecturer-info {
+  font-size: 24rpx;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 200rpx;
+  justify-content: space-between;
+  height: 72rpx;
+  margin-right: 16rpx;
+}
+.container .enrolled .course .course-info .course-progress, .container .unregistered .course .course-info .course-progress {
+  background-color: #fff8e8;
+  border-radius: 24rpx;
+  width: 214rpx;
+  height: 40rpx;
+  font-size: 24rpx;
+  color: #F2AA00;
+  text-align: center;
+}
+.container .unregistered .course .course-info {
   flex: 1;
+  height: 160rpx;
 }
-.container .unregistered .unregistered-course .course-title .course-subtitle {
-  font-size: 14px;
-  color: #2d5186;
+.container .unregistered .course .course-subtitle {
+  color: #666564;
+  font-size: 28rpx;
 }
-.container .unregistered .unregistered-course .course-button {
-  padding: 20rpx;
-  background-color: #799ed2;
-  border-radius: 5px;
-  color: #fff;
+.container .unregistered .course .course-price {
+  font-size: 32rpx;
+  color: #FF5123;
+  font-weight: bold;
+}
+.container .unregistered .course .course-price .previous {
+  font-size: 24rpx;
+  color: #999896;
+  text-decoration: line-through;
+  display: inline;
+}
+.container .unregistered .course .course-button {
+  align-self: flex-end;
+  background-color: #FFBA19;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  padding: 6rpx 30rpx;
+  box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60;
 }
 
 /*# sourceMappingURL=course.wxss.map */
