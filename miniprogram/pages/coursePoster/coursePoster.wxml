@@ -1,29 +1,35 @@
 <!--miniprogram/pages/courseDetail/courseDetail.wxml-->
 <view class="container">
     <image class="poster"></image>
-    <view class="footer signUpButton" wx:if="{{signUpButtonState}}">
+    <view class="footer signUpButton">
         <view class="hint">
             限时免费领取 <view class="highlight">777</view> 元 【精品课】 剩余 <view class="highlight">12:59:59</view>
         </view>
         <button open-type="getPhoneNumber"
-                bindgetphonenumber="getPhoneNumber"
+                bindgetphonenumber="toForm"
                 size="mini"
                 class="table-button"
-                bindtap="toSignUp">立即报名</button>
-    </view>
-    <view class="footer signUpForm" wx:else>
-        <view class="close" bindtap="closeSignUpForm">x</view>
-        <view class="form-title">确认手机号</view>
-        <view class="wrapper">
-            <input class="form-input" value="点击输入手机号" type="digit"></input>
-            <button class="confirmButton" size="mini">验证</button>
-        </view>
-        <view class="wrapper">
-            <input class="form-input" type="digit" value="点击输入验证码"></input>
-        </view>
-        <button open-type="contact"
-                bindcontact="handleContact"
-                class="signUpButton"
-                size="mini">报名</button>
+                >立即报名</button>
     </view>
 </view>
+
+<showModel wx:if="{{formShowModelState}}"
+           showModelData="{{formShowModelData}}"
+           bindconfirm=""
+           bindhidden="toTips">
+    <view class="table">
+        <input type="digit" class="cellphone-number"></input>
+        <image></image>
+    </view>
+    <view class="table addMargin">
+        <input type="digit"></input>
+        <view class="getCodeButton">获取验证码</view>
+    </view>
+</showModel>
+
+<showModel wx:if="{{tipsShowModelState}}"
+           showModelData="{{tipsShowModelData}}"
+           bindcancel="closeForm"
+           bindconfirm="continueForm"
+           bindhidden="toTips">
+</showModel>

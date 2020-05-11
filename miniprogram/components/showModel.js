@@ -4,18 +4,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    title: String,
-    content: String,
-    ButtonType: String
+    showModelData: Object
   },
 
   /**
    * 组件的初始数据
    */
-  data: {
-
-  },
-
+  data: {},
   /**
    * 组件的方法列表
    */
@@ -26,6 +21,9 @@ Component({
     },
     onConfirm: function () {
       this.triggerEvent('confirm')
+    },
+    onHidden: function () {
+      this.triggerEvent('hidden')
     }
   }
 

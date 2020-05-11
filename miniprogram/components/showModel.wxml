@@ -2,18 +2,19 @@
 <view class="showModel-wrapper" catchtouchmove="preventTouchMove">
     <view class="showModel">
         <view class="title">
-            温馨提示
+            {{showModelData.title}}
         </view>
-        <image class="icon">x</image>
+        <image class="icon"  bindtap="onHidden">x</image>
         <view class="content">
-            不确认手机号助教老师无法联系到您，导致享受不到优质助教服务
+            {{showModelData.content}}
+            <slot></slot>
         </view>
         <view class="button-wrapper">
-            <view class="button cancel" bindtap="onCancel" wx:if="{{ButtonType === 'double'}}">
-                狠心放弃
+            <view class="button cancel" bindtap="onCancel" wx:if="{{showModelData.type === 'double'}}">
+                {{showModelData.cancelText}}
             </view>
             <view class="button" bindtap="onConfirm">
-                继续填写
+                {{showModelData.confirmText}}
             </view>
         </view>
     </view>
