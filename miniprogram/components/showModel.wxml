@@ -1,0 +1,20 @@
+<!--components/showModel.wxml-->
+<view class="showModel-wrapper" catchtouchmove="preventTouchMove">
+    <view class="showModel">
+        <view class="title">
+            温馨提示
+        </view>
+        <image class="icon">x</image>
+        <view class="content">
+            不确认手机号助教老师无法联系到您，导致享受不到优质助教服务
+        </view>
+        <view class="button-wrapper">
+            <view class="button cancel" bindtap="onCancel" wx:if="{{ButtonType === 'double'}}">
+                狠心放弃
+            </view>
+            <view class="button" bindtap="onConfirm">
+                继续填写
+            </view>
+        </view>
+    </view>
+</view>

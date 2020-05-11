@@ -1,0 +1,67 @@
+/* components/showModel.wxss */
+.showModel-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1A191870;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 20;
+}
+.showModel-wrapper .showModel {
+  width: 670rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  padding: 32rpx 48rpx 64rpx 48rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  position: absolute;
+}
+.showModel-wrapper .showModel .title {
+  color: #1A1918;
+  font-size: 36rpx;
+  font-weight: bolder;
+}
+.showModel-wrapper .showModel .icon {
+  background-color: #CCCBC8;
+  width: 32rpx;
+  height: 32rpx;
+  right: 48rpx;
+  top: 42rpx;
+  position: absolute;
+}
+.showModel-wrapper .showModel .content {
+  margin: 64rpx 0;
+  color: #666564;
+  line-height: 48rpx;
+  font-size: 32rpx;
+  text-align: center;
+}
+.showModel-wrapper .showModel .button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.showModel-wrapper .showModel .button-wrapper .button {
+  font-size: 28rpx;
+  padding: 20rpx 80rpx;
+  border-radius: 40rpx;
+  color: #ffffff;
+  background-color: #FFBA19;
+  box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60;
+}
+.showModel-wrapper .showModel .button-wrapper .button.cancel {
+  border: 2rpx #F2AA00 solid;
+  color: #F2AA00;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+/*# sourceMappingURL=showModel.wxss.map */

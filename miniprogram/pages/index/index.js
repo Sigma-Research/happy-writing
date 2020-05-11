@@ -64,5 +64,5 @@ Page({
     wx.navigateTo({
       url: '../coursePoster/coursePoster'
     })
-  }
+  },
 })
