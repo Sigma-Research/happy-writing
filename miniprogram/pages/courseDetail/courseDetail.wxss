@@ -71,8 +71,10 @@
   box-sizing: border-box;
   border-bottom: 1rpx solid #E6E4E1;
 }
-.container .course-arrange .course-section .section-middle .course-icon {
+.container .course-arrange .course-section .section-middle .middle-left {
   flex: 1;
+}
+.container .course-arrange .course-section .section-middle .course-icon {
   height: 48rpx;
   width: 60rpx;
   background-color: #FFBA19;
@@ -84,6 +86,7 @@
   color: #ffffff;
   padding: 6rpx 30rpx;
   box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60;
+  align-self: flex-end;
 }
 .container .course-arrange .course-section .course-state {
   padding: 27rpx 0;

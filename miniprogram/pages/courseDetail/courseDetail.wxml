@@ -24,9 +24,11 @@
             <view class="section-content">
                 <view class="course-section">
                     <view class="course-title">课程标题</view>
-                    <view class="course-date">2020/2/21</view>
                     <view class="section-middle">
-                        <view class="course-icon"></view>
+                        <view class="middle-left">
+                            <view class="course-date">2020/2/21</view>
+                            <view class="course-icon"></view>
+                        </view>
                         <view class="course-startButton" bindtap="toCourseLearn">去学习</view>
                     </view>
                     <view class="course-state">
@@ -36,9 +38,10 @@
                 </view>
                 <view class="course-section">
                     <view class="course-title">课程标题</view>
-                    <view class="course-date">2020/2/21</view>
                     <view class="section-middle">
-                        <view class="course-icon"></view>
+                        <view class="middle-left">
+                            <view class="course-date">2020/2/21</view>
+                        </view>
                         <view class="course-startButton" bindtap="toCourseLearn">去学习</view>
                     </view>
                     <view class="course-state">
@@ -48,9 +51,11 @@
                 </view>
                 <view class="course-section disable">
                     <view class="course-title">课程标题</view>
-                    <view class="course-date">2020/2/21</view>
                     <view class="section-middle">
-                        <view class="course-icon"></view>
+                        <view class="middle-left">
+                            <view class="course-date">2020/2/21</view>
+                            <view class="course-icon"></view>
+                        </view>
                         <view class="course-startButton" bindtap="toCourseLearn">去学习</view>
                     </view>
                     <view class="course-state">
