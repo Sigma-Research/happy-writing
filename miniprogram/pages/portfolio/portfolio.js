@@ -1,4 +1,4 @@
-// miniprogram/pages/profile/profile.js
+// miniprogram/pages/portfolio/portfolio.js
 Page({
 
   /**

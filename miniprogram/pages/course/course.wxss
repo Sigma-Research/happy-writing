@@ -24,58 +24,50 @@
   flex-direction: row;
 }
 .container .enrolled .course .course-image, .container .unregistered .course .course-image {
-  width: 160rpx;
-  height: 160rpx;
-  border-radius: 15rpx;
+  width: 192rpx;
+  height: 228rpx;
+  border-radius: 20rpx;
   background-color: #b3c7e6;
   margin-right: 32rpx;
 }
 .container .enrolled .course .course-info, .container .unregistered .course .course-info {
-  height: 260rpx;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: self-start;
 }
 .container .enrolled .course .course-info .course-title, .container .unregistered .course .course-info .course-title {
   font-size: 32rpx;
   font-weight: bold;
+  margin-bottom: 16rpx;
 }
 .container .enrolled .course .course-info .course-date, .container .unregistered .course .course-info .course-date {
   font-size: 24rpx;
   color: #999896;
 }
-.container .enrolled .course .course-info .course-lecturer, .container .unregistered .course .course-info .course-lecturer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: 24rpx;
-}
-.container .enrolled .course .course-info .course-lecturer .lecturer-avatar, .container .unregistered .course .course-info .course-lecturer .lecturer-avatar {
-  width: 64rpx;
-  height: 64rpx;
-  border-radius: 50%;
-  background-color: #192e4d;
-  margin-right: 16rpx;
-}
-.container .enrolled .course .course-info .course-lecturer .lecturer-info, .container .unregistered .course .course-info .course-lecturer .lecturer-info {
-  font-size: 24rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 72rpx;
-  margin-right: 16rpx;
-}
-.container .enrolled .course .course-info .course-lecturer .lecturer-info .gray, .container .unregistered .course .course-info .course-lecturer .lecturer-info .gray {
-  color: #999896;
-}
 .container .enrolled .course .course-info .course-progress, .container .unregistered .course .course-info .course-progress {
-  background-color: #fff8e8;
+  background-color: #FFBA1910;
   border-radius: 24rpx;
-  width: 214rpx;
-  height: 40rpx;
+  padding: 4rpx 32rpx;
   font-size: 24rpx;
   color: #F2AA00;
   text-align: center;
+  margin: 20rpx 0;
+}
+.container .enrolled .course .course-info .startButton, .container .unregistered .course .course-info .startButton {
+  font-size: 28rpx;
+  background-color: #FFBA19;
+  color: #ffffff;
+  padding: 12rpx 46rpx;
+  box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60;
+  border-radius: 32rpx;
+}
+.container .unregistered .course .course-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 15rpx;
+  background-color: #b3c7e6;
+  margin-right: 32rpx;
 }
 .container .unregistered .course .course-info {
   flex: 1;
