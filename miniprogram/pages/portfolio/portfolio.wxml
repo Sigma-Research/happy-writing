@@ -1,2 +1,58 @@
 <!--miniprogram/pages/portfolio/portfolio.wxml-->
-<text>miniprogram/pages/portfolio/portfolio.wxml</text>
+<view class="container profile">
+    <view class="work">
+        <image class="image"></image>
+        <view class="info">
+            <view class="wrapper">
+                <text class="title">课程标题课程标题课程标题</text>
+                <image class="icon"></image>
+                <view class="sum">238</view>
+            </view>
+            <view class="date">作业时间：2020-02-25</view>
+        </view>
+    </view>
+    <view class="work">
+        <image class="image"></image>
+        <view class="info">
+            <view class="wrapper">
+                <text class="title">课程标题课程标题课程标题</text>
+                <image class="icon"></image>
+                <view class="sum">238</view>
+            </view>
+            <view class="date">作业时间：2020-02-25</view>
+        </view>
+    </view>
+    <view class="work">
+        <image class="image"></image>
+        <view class="info">
+            <view class="wrapper">
+                <text class="title">课程标题课程标题课程标题</text>
+                <image class="icon"></image>
+                <view class="sum">238</view>
+            </view>
+            <view class="date">作业时间：2020-02-25</view>
+        </view>
+    </view>
+    <view class="work">
+        <image class="image"></image>
+        <view class="info">
+            <view class="wrapper">
+                <text class="title">课程标题课程标题课程标题</text>
+                <image class="icon"></image>
+                <view class="sum">238</view>
+            </view>
+            <view class="date">作业时间：2020-02-25</view>
+        </view>
+    </view>
+    <view class="work">
+        <image class="image"></image>
+        <view class="info">
+            <view class="wrapper">
+                <text class="title">课程标题课程标题课程标题</text>
+                <image class="icon"></image>
+                <view class="sum">238</view>
+            </view>
+            <view class="date">作业时间：2020-02-25</view>
+        </view>
+    </view>
+</view>
