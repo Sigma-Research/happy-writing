@@ -31,5 +31,5 @@
            showModelData="{{tipsShowModelData}}"
            bindcancel="closeForm"
            bindconfirm="continueForm"
-           bindhidden="toTips">
+           bindhidden="closeForm">
 </showModel>
