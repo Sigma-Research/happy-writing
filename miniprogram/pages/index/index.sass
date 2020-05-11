@@ -6,70 +6,41 @@
     width: 670rpx
     height: 336rpx
     border-radius: 8rpx
-  #performance
-    .article
-      width: 670rpx
-      height: 164rpx
-      background-color: #fff
-      border-radius: 20rpx
-      box-shadow: 0 20rpx 40rpx -8rpx #00000010
-      display: flex
-      flex-direction: row
-      align-items: center
-      .article-image
-        width: 112rpx
-        height: 112rpx
-        border-radius: 15rpx
-        margin-right: 16rpx
-        margin-left: 32rpx
-        background-color: #799ed2
-      .article-content
-        .article-title
-          font-size: 32rpx
-          font-weight: bolder
-          margin-bottom: 16rpx
-        .article-subtitle
-          font-size: 28rpx
-          color: #666564
   #square
-    .work
-      background-color: #fff
-      width: 670rpx
-      border-radius: 20rpx
-      box-shadow: 0 20rpx 40rpx -8rpx #00000010
-      display: flex
+    .section-content
+      flex-wrap: wrap
       flex-direction: row
-      align-items: center
-      margin-bottom: 32rpx
-      .work-image
-        background-color: #2d5386
-        width: 236rpx
-        height: 236rpx
-        margin: 32rpx
+      justify-content: space-between
+      width: 670rpx
+      .work
+        background-color: #fff
         border-radius: 20rpx
-      .work-detail
-        height: 236rpx
+        box-shadow: 0 20rpx 40rpx -8rpx #00000010
         display: flex
         flex-direction: column
-        justify-content: space-between
-        .detail-student
-          display: flex
-          flex-direction: row
-          align-items: center
-          .info-avatar
-            width: 64rpx
-            height: 64rpx
-            border-radius: 50%
-            background-color: #192e4d
-            margin-right: 16rpx
-          .info-name
-            font-size: 32rpx
-            color: #1A1918
-        .detail-content
+        margin-bottom: 48rpx
+        padding-bottom: 16rpx
+        width: 312rpx
+        overflow: hidden
+        .image
+          background-color: #2d5386
+          width: 312rpx
+          height: 304rpx
+        .detail
+          padding: 16rpx
           font-size: 24rpx
           color: #666564
-          .highlight
-            color: #F2AA00
-            font-size: 32rpx
-            font-weight: bolder
-            display: inline
+          line-height: 32rpx
+        .student
+          display: flex
+          flex-direction: row
+          .avatar
+            width: 48rpx
+            height: 48rpx
+            border-radius: 50%
+            background-color: #b3c7e6
+            margin-right: 16rpx
+          .name
+            font-size: 28rpx
+            color: #1A1918
+            font-weight: normal
