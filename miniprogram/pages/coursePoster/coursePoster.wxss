@@ -76,6 +76,9 @@
   color: #fff;
   margin: 8rpx 0;
 }
+.table .getCodeButton.disable {
+  background-color: #CCCBC8;
+}
 
 .addMargin {
   margin-top: 32rpx;

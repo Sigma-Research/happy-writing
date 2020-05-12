@@ -11,9 +11,7 @@ Page({
 
   onLoad: function() {
     if (!wx.cloud) {
-
       console.log('没有使用云函数')
-
       return
     }
 

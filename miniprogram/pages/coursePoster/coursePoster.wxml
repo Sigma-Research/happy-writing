@@ -18,12 +18,12 @@
            bindconfirm=""
            bindhidden="toTips">
     <view class="table">
-        <input type="digit" class="cellphone-number"></input>
+        <input type="number" class="cellphone-number" bindinput="inputEdit"></input>
         <image></image>
     </view>
     <view class="table addMargin">
-        <input type="digit"></input>
-        <view class="getCodeButton">获取验证码</view>
+        <input type="number"></input>
+        <view class="{{getCodeButtonState ? 'getCodeButton' : 'getCodeButton disable'}}" bindtap="getVerificationCode">获取验证码</view>
     </view>
 </showModel>
 
