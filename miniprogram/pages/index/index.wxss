@@ -37,6 +37,7 @@
 .container #square .section-content .work .student {
   display: flex;
   flex-direction: row;
+  padding-left: 16rpx;
 }
 .container #square .section-content .work .student .avatar {
   width: 48rpx;

@@ -56,7 +56,7 @@
                             <view class="course-date">2020/2/21</view>
                             <view class="course-icon"></view>
                         </view>
-                        <view class="course-startButton" bindtap="toCourseLearn">去学习</view>
+                        <view class="course-startButton" bindtap="learnDisable">去学习</view>
                     </view>
                     <view class="course-state">
                         <view class="state-button">学习已完成</view>
@@ -67,3 +67,8 @@
         </view>
     </view>
 </view>
+<showModel wx:if="{{disableShowModelState}}"
+           showModelData="{{disableShowModelData}}"
+           bindconfirm="hiddenDisableShowModel"
+           bindhidden="hiddenDisableShowModel">
+</showModel>
