@@ -1,20 +1,58 @@
 // miniprogram/pages/courseLearn/courseLearn.js
+import createHanziWriterContext from 'hanzi-writer-miniprogram';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
-    name: '此时此刻',
-    author: '许巍',
-    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.writerCtx1 = createHanziWriterContext({
+      id: 'hz-writer1',
+      character: '你',
+      page: this,
+    });
+    this.writerCtx2 = createHanziWriterContext({
+      id: 'hz-writer2',
+      character: '好',
+      page: this,
+    });
+    this.writerCtx3 = createHanziWriterContext({
+      id: 'hz-writer3',
+      character: '啊',
+      page: this,
+    });
+    this.writerCtx4 = createHanziWriterContext({
+      id: 'hz-writer4',
+      character: '啊',
+      page: this,
+    });
+    this.writerCtx5 = createHanziWriterContext({
+      id: 'hz-writer5',
+      character: '啊',
+      page: this,
+    });
+    this.writerCtx6 = createHanziWriterContext({
+      id: 'hz-writer6',
+      character: '啊',
+      page: this,
+    });
+
+
+    // You can call any normal HanziWriter method here
+    this.writerCtx1.loopCharacterAnimation();
+    this.writerCtx2.loopCharacterAnimation();
+
+    this.writerCtx3.loopCharacterAnimation();
+    this.writerCtx4.loopCharacterAnimation();
+    this.writerCtx5.loopCharacterAnimation();
+
+    this.writerCtx6.loopCharacterAnimation();
 
   },
 

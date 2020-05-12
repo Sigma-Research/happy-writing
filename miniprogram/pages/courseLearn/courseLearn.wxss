@@ -102,9 +102,16 @@
   color: #999896;
   font-size: 24rpx;
 }
-.container .display .section-content {
+.container .section.display {
+  padding-bottom: 0;
+}
+.container .section.display .section-content {
   height: 192rpx;
-  background-color: #b3c7e6;
+  white-space: nowrap;
+}
+.container .section.display .section-content .hanzi {
+  width: 100px;
+  display: inline-block;
 }
 .container .communication {
   width: 750rpx;

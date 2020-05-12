@@ -57,15 +57,31 @@
     <view class="section display">
         <view class="section-title">书写展示</view>
         <view class="section-subtitle .hint">点击查看写字顺序笔法</view>
-        <view class="section-content">
-
-        </view>
+        <scroll-view scroll-x class="section-content">
+            <view class="hanzi">
+                <hanzi-writer-view id="hz-writer1" width="100" height="100" />
+            </view>
+            <view class="hanzi">
+                <hanzi-writer-view id="hz-writer2" width="100" height="100" />
+            </view>
+            <view class="hanzi">
+                <hanzi-writer-view id="hz-writer3" width="100" height="100" />
+            </view>
+            <view class="hanzi">
+                <hanzi-writer-view id="hz-writer4" width="100" height="100" />
+            </view>
+            <view class="hanzi">
+                <hanzi-writer-view id="hz-writer5" width="100" height="100" />
+            </view>
+            <view class="hanzi">
+                <hanzi-writer-view id="hz-writer6" width="100" height="100" />
+            </view>
+        </scroll-view>
     </view>
     <view class="section exercise">
         <view class="section-title">作业练习</view>
         <view class="section-subtitle .hint">作业描述</view>
         <view class="section-content">
-
         </view>
     </view>
     <view class="section communication">
