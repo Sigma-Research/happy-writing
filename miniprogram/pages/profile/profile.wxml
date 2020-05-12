@@ -1,9 +1,13 @@
 <!--miniprogram/pages/profile/profile.wxml-->
 <view class="container">
     <view class="profile">
-        <image class="avatar"></image>
-        <view class="name">石晓晓
-            <image class="modify">
+        <button open-type="getUserInfo"
+                bindgetuserinfo="onGetUserInfo"
+                style="background-image: url({{avatarUrl}})"
+                size="default"
+                class="avatar"></button>
+        <view class="name">{{userInfo ? userInfo.nickName : '点击头像登录'}}
+            <image class="modify" wx:if="{{userInfo}}">
 
             </image>
         </view>

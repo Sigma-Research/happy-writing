@@ -41,9 +41,9 @@
   border-radius: 50%;
   box-shadow: 0 8rpx 16rpx 0 #A4C2FF30;
   border: 4rpx #ffffff;
-  background-color: #b3c7e6;
   margin-bottom: 32rpx;
   margin-top: 80rpx;
+  background-size: cover;
 }
 .container .name {
   font-size: 36rpx;
