@@ -1,110 +1,168 @@
 /* miniprogram/pages/courseLearn/courseLearn.wxss */
 .container {
-  color: #192e4d;
-}
-.container .course-video {
-  width: 710rpx;
-  height: 360rpx;
-  border: #2d5186 1px solid;
-  margin-top: 20rpx;
-}
-.container .section {
-  width: 710rpx;
-}
-.container .section .section-subtitle {
-  font-size: 14px;
-  margin: 20rpx 0;
-  font-weight: bold;
-}
-.container .section .course-date {
-  font-size: 12px;
-  margin-bottom: 20rpx;
-}
-.container .section .course-lecturer {
-  display: flex;
-  flex-direction: row;
-}
-.container .section .course-lecturer .lecturer-item {
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  padding-bottom: 32rpx;
 }
-.container .section .course-lecturer .lecturer-item .lecturer-avatar {
-  width: 85rpx;
-  height: 85rpx;
-  border-radius: 50%;
-  background-color: #799ed2;
-  margin-right: 20rpx;
-}
-.container .section .course-lecturer .lecturer-item .lecturer-info {
-  font-size: 12px;
-  margin-right: 30rpx;
-}
-.container .section .writingDisplay {
-  height: 240rpx;
-  background-color: #2d5386;
-}
-.container .section .homeworkExercise {
-  font-size: 14px;
-  padding: 0 20rpx;
+.container .course {
+  width: 660rpx;
   display: flex;
   flex-direction: column;
+  margin-top: 32rpx;
+  border-bottom: 1rpx solid #E6E4E1;
+}
+.container .course .infoCard {
+  height: 342rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 32rpx;
+  margin-bottom: 48rpx;
+}
+.container .course .infoCard .title {
+  color: #1A1918;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.container .course .infoCard .date, .container .course .infoCard .statistics {
+  color: #999896;
+  font-size: 24rpx;
+}
+.container .course .infoCard .lecturerWrapper {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
-.container .section .homeworkExercise .audioButton {
-  padding: 20rpx;
-}
-.container .section .homeworkExercise .homework-video {
-  width: 568rpx;
-  height: 288rpx;
-}
-.container .section .myHomework {
+.container .course .infoCard .lecturerWrapper .lecturer {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
-.container .section .myHomework .homeworkButton {
-  background-color: #2d5386;
-  padding: 20rpx 60rpx;
-  font-size: 14px;
-  color: #fff;
-  border-radius: 15rpx;
+.container .course .infoCard .lecturerWrapper .lecturer .avatar {
+  width: 64rpx;
+  height: 64rpx;
+  background-color: #b3c7e6;
+  border-radius: 50rpx;
 }
-.container .section .homeworkDisplay {
+.container .course .infoCard .lecturerWrapper .lecturer .name {
+  height: 72rpx;
+  margin: 0 16rpx;
+  font-size: 24rpx;
+  color: #999896;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .course .infoCard .lecturerWrapper .lecturer .name .highlight {
+  color: #1A1918;
+}
+.container .course .course-section {
+  margin-bottom: 16rpx;
+}
+.container .course .course-section .title {
+  font-size: 32rpx;
+  font-weight: bolder;
+  margin-bottom: 16rpx;
+}
+.container .course .course-section .video {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.container .course .course-section .video .image {
+  border-radius: 20rpx;
+  background-color: #b3c7e6;
+  width: 240rpx;
+  height: 144rpx;
+  margin-right: 16rpx;
+}
+.container .course .course-section .video .videoInfo {
+  height: 92rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .course .course-section .video .videoInfo .title {
+  font-weight: bolder;
+  font-size: 32rpx;
+}
+.container .course .course-section .video .videoInfo .duration {
+  font-size: 24rpx;
+  color: #666564;
+}
+.container .section {
+  width: 660rpx;
+  padding-bottom: 48rpx;
+  border-bottom: 1rpx #E6E4E1 solid;
+}
+.container .section .section-subtitle.hint {
+  margin-bottom: 16rpx;
+  color: #999896;
+  font-size: 24rpx;
+}
+.container .display .section-content {
+  height: 192rpx;
+  background-color: #b3c7e6;
+}
+.container .communication {
+  width: 750rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+.container .communication .content {
+  white-space: nowrap;
+  margin-top: 16rpx;
+}
+.container .communication .content .work {
+  display: inline-block;
+  border-radius: 20rpx;
+  width: 298rpx;
+  height: 384rpx;
+  margin-right: 32rpx;
+  overflow: hidden;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
+  margin-bottom: 40rpx;
+}
+.container .communication .content .work .image {
+  width: 298rpx;
+  height: 274rpx;
+  background-color: #b3c7e6;
+}
+.container .communication .content .work .info {
+  padding: 16rpx;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666564;
 }
-.container .section .homeworkDisplay .homework-item {
-  margin-bottom: 10rpx;
+.container .communication .content .work .info .name {
+  color: #1A1918;
+  font-size: 28rpx;
 }
-.container .section .homeworkDisplay .homework-item .item-image {
-  width: 345rpx;
-  height: 400rpx;
+.container .communication .content .work .info .icon .heart {
+  width: 22rpx;
+  height: 22rpx;
   background-color: #b3c7e6;
 }
-.container .section .homeworkDisplay .homework-item .item-name {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 5rpx 0;
-}
-.container .section .homeworkDisplay .homework-item .item-date {
-  font-size: 12px;
-}
-.container .operationButton {
+.container .buttonGroup {
+  width: 660rpx;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 710rpx;
-  margin: 40rpx 0 20rpx 0;
+  padding: 16rpx 0;
 }
-.container .operationButton .button {
-  background-color: #2d5186;
+.container .buttonGroup .button {
+  background-color: #FFBA19;
+  border-radius: 40rpx;
+  padding: 20rpx 96rpx;
+  font-size: 28rpx;
   color: #ffffff;
-  font-size: 14px;
-  padding: 25rpx 50rpx;
-  border-radius: 15rpx;
+  box-shadow: 0 8rpx 16rpx -4rpx;
 }
 
 /*# sourceMappingURL=courseLearn.wxss.map */

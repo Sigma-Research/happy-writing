@@ -1,63 +1,112 @@
 <!--miniprogram/pages/courseLearn/courseLearn.wxml-->
 <view class="container">
-    <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
-           class="course-video">
-    </video>
-    <view class="section">
-        <view class="section-title">课程主标题</view>
-        <view class="section-content">
-            <view class="course-date">2020/2/21 - 2020/4/30</view>
-            <view class="course-lecturer">
-                <view class="lecturer-item">
-                    <view class="lecturer-avatar"></view>
-                    <view class="lecturer-info">
-                        <view>王先生</view>
-                        <view>主讲老师</view>
+    <view class="course">
+        <view class="infoCard">
+            <view class="title">课程主标题</view>
+            <view class="date">有效期： 2020-02-21 ~ 2020-02-24</view>
+            <view class="statistics">课程时间：1小时12分钟  视频数：2个</view>
+            <view class="lecturerWrapper">
+                <view class="lecturer">
+                    <image class="avatar"></image>
+                    <view class="name">
+                        <view class="highlight">王老师</view>
+                        主讲老师
                     </view>
                 </view>
-                <view class="lecturer-item">
-                    <view class="lecturer-avatar"></view>
-                    <view class="lecturer-info">
-                        <view>王先生</view>
-                        <view>主讲老师</view>
+                <view class="lecturer">
+                    <image class="avatar"></image>
+                    <view class="name">
+                        <view class="highlight">刘老师</view>
+                        辅导老师
                     </view>
                 </view>
             </view>
-            <view class="section-subtitle">书写展示</view>
-            <view class="writingDisplay"></view>
-            <view class="section-subtitle">作业练习</view>
-            <view class="homeworkExercise">
-                作业描述作业描述作业描述作业描述作业描述作业描述作业。描述作业描述作业描述，作业描述作业描述作业描述作业描述作业描述作业，描述作业描述作业描述作业描述作业描述作业描述；
-                <audio class="audioButton" poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
-                <video src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
-                       class="homework-video">
-                </video>
-            </view>
-            <view class="section-subtitle">我的作业</view>
-            <view class="myHomework">
-                <view class="homeworkButton" bindtap="toHomeworkDetail">点击添加作业</view>
-            </view>
-            <view class="section-subtitle">作业交流</view>
-            <view class="homeworkDisplay">
-                <view class="homework-item">
-                    <image class="item-image"></image>
-                    <view class="item-name">刘超</view>
-                    <view class="item-date">2020.2.12</view>
+        </view>
+        <view class="course-section">
+            <view class="title">主标题</view>
+            <view class="videoWrapper">
+                <view class="video">
+                    <image class="image"></image>
+                    <view class="videoInfo">
+                        <view class="title">视频标题</view>
+                        <view class="duration">视频时长：14分钟</view>
+                    </view>
                 </view>
-                <view class="homework-item">
-                    <image class="item-image"></image>
-                    <view class="item-name">刘超</view>
-                    <view class="item-date">2020.2.12</view>
+                <view class="video">
+                    <image class="image"></image>
+                    <view class="videoInfo">
+                        <view class="title">视频标题</view>
+                        <view class="duration">视频时长：14分钟</view>
+                    </view>
                 </view>
-                <view class="homework-item">
-                    <image class="item-image"></image>
-                    <view class="item-name">刘超</view>
-                    <view class="item-date">2020.2.12</view>
+            </view>
+        </view>
+        <view class="course-section">
+            <view class="title">主标题</view>
+            <view class="videoWrapper">
+                <view class="video">
+                    <image class="image"></image>
+                    <view class="videoInfo">
+                        <view class="title">视频标题</view>
+                        <view class="duration">视频时长：14分钟</view>
+                    </view>
                 </view>
             </view>
         </view>
     </view>
-    <view class="operationButton">
+    <view class="section display">
+        <view class="section-title">书写展示</view>
+        <view class="section-subtitle .hint">点击查看写字顺序笔法</view>
+        <view class="section-content">
+
+        </view>
+    </view>
+    <view class="section exercise">
+        <view class="section-title">作业练习</view>
+        <view class="section-subtitle .hint">作业描述</view>
+        <view class="section-content">
+
+        </view>
+    </view>
+    <view class="section communication">
+        <view class="section-title">作业交流</view>
+        <scroll-view scroll-x class="content">
+            <view class="work">
+                <image class="image"></image>
+                <view class="info">
+                    <view class="name">曾家平</view>
+                    <view class="icon">
+                        <image class="heart"></image>
+                        238
+                    </view>
+                    <view class="date">作业时间：2020-02-25</view>
+                </view>
+            </view>
+            <view class="work">
+                <image class="image"></image>
+                <view class="info">
+                    <view class="name">曾家平</view>
+                    <view class="icon">
+                        <image class="heart"></image>
+                        238
+                    </view>
+                    <view class="date">作业时间：2020-02-25</view>
+                </view>
+            </view>
+            <view class="work">
+                <image class="image"></image>
+                <view class="info">
+                    <view class="name">崔文豪</view>
+                    <view class="icon">
+                        <image class="heart"></image>
+                        238
+                    </view>
+                    <view class="date">作业时间：2020-02-25</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="buttonGroup">
         <view class="button">上一节</view>
         <view class="button">下一节</view>
     </view>

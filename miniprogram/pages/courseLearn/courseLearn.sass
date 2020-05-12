@@ -1,87 +1,140 @@
 /* miniprogram/pages/courseLearn/courseLearn.wxss */
 .container
-  color: #192e4d
-  .course-video
-    width: 710rpx
-    height: 360rpx
-    border: #2d5186 1px solid
-    margin-top: 20rpx
-  .section
-    width: 710rpx
-    .section-subtitle
-      font-size: 14px
-      margin: 20rpx 0
-      font-weight: bold
-    .course-date
-      font-size: 12px
-      margin-bottom: 20rpx
-    .course-lecturer
+  align-items: center
+  .course
+    width: 660rpx
+    display: flex
+    flex-direction: column
+    margin-top: 32rpx
+    border-bottom: 1rpx solid #E6E4E1
+    .infoCard
+      height: 342rpx
+      border-radius: 20rpx
+      background-color: #fff
+      box-shadow: 0 20rpx 40rpx -8rpx #00000010
       display: flex
-      flex-direction: row
-      .lecturer-item
+      flex-direction: column
+      justify-content: space-evenly
+      padding: 0 32rpx
+      margin-bottom: 48rpx
+      .title
+        color: #1A1918
+        font-size: 40rpx
+        font-weight: bold
+      .date,.statistics
+        color: #999896
+        font-size: 24rpx
+      .lecturerWrapper
         display: flex
         flex-direction: row
         align-items: center
-        padding-bottom: 32rpx
-        .lecturer-avatar
-          width: 85rpx
-          height: 85rpx
-          border-radius: 50%
-          background-color: #799ed2
-          margin-right: 20rpx
-        .lecturer-info
-          font-size: 12px
-          margin-right: 30rpx
-    .writingDisplay
-      height: 240rpx
-      background-color: #2d5386
-    .homeworkExercise
-      font-size: 14px
-      padding: 0 20rpx
-      display: flex
-      flex-direction: column
-      align-items: center
-      .audioButton
-        padding: 20rpx
-      .homework-video
-        width: 568rpx
-        height: 288rpx
-    .myHomework
-      display: flex
-      justify-content: center
-      .homeworkButton
-        background-color: #2d5386
-        padding: 20rpx 60rpx
-        font-size: 14px
-        color: #fff
-        border-radius: 15rpx
-    .homeworkDisplay
-      display: flex
-      flex-direction: row
-      flex-wrap: wrap
-      justify-content: space-between
-      .homework-item
-        margin-bottom: 10rpx
-        .item-image
-          width: 345rpx
-          height: 400rpx
+        .lecturer
+          display: flex
+          flex-direction: row
+          align-items: center
+          .avatar
+            width: 64rpx
+            height: 64rpx
+            background-color: #b3c7e6
+            border-radius: 50rpx
+          .name
+            height: 72rpx
+            margin: 0 16rpx
+            font-size: 24rpx
+            color: #999896
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            .highlight
+              color: #1A1918
+    .course-section
+      margin-bottom: 16rpx
+      .title
+        font-size: 32rpx
+        font-weight: bolder
+        margin-bottom: 16rpx
+      .video
+        display: flex
+        flex-direction: row
+        align-items: center
+        margin-bottom: 32rpx
+        .image
+          border-radius: 20rpx
           background-color: #b3c7e6
-        .item-name
-          font-size: 14px
-          font-weight: bold
-          margin: 5rpx 0
-        .item-date
-          font-size: 12px
-
-  .operationButton
+          width: 240rpx
+          height: 144rpx
+          margin-right: 16rpx
+        .videoInfo
+          height: 92rpx
+          display: flex
+          flex-direction: column
+          justify-content: space-between
+          .title
+            font-weight: bolder
+            font-size: 32rpx
+          .duration
+            font-size: 24rpx
+            color: #666564
+  .section
+    width: 660rpx
+    padding-bottom: 48rpx
+    border-bottom: 1rpx #E6E4E1 solid
+    .section-subtitle.hint
+      margin-bottom: 16rpx
+      color: #999896
+      font-size: 24rpx
+  .display
+    .section-content
+      height: 192rpx
+      background-color: #b3c7e6
+  .communication
+    width: 750rpx
+    padding-left: 40rpx
+    box-sizing: border-box
+    .content
+      white-space: nowrap
+      margin-top: 16rpx
+      .work
+        display: inline-block
+        border-radius: 20rpx
+        width: 298rpx
+        height: 384rpx
+        margin-right: 32rpx
+        overflow: hidden
+        box-shadow: 0 20rpx 40rpx -8rpx #00000010
+        margin-bottom: 40rpx
+        .image
+          width: 298rpx
+          height: 274rpx
+          background-color: #b3c7e6
+        .info
+          padding: 16rpx
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          justify-content: space-between
+          align-items: center
+          font-size: 24rpx
+          color: #666564
+          .name
+            color: #1A1918
+            font-size: 28rpx
+          .icon
+            .heart
+              width: 22rpx
+              height: 22rpx
+              background-color: #b3c7e6
+  .buttonGroup
+    width: 660rpx
     display: flex
     flex-direction: row
     justify-content: space-between
-    width: 710rpx
-    margin: 40rpx 0 20rpx 0
+    padding: 16rpx 0
     .button
-      background-color: #2d5186
+      background-color: #FFBA19
+      border-radius: 40rpx
+      padding: 20rpx 96rpx
+      font-size: 28rpx
       color: #ffffff
-      font-size: 14px
-      padding: 25rpx 50rpx
-      border-radius: 15rpx
+      box-shadow: 0 8rpx 16rpx -4rpx
+
