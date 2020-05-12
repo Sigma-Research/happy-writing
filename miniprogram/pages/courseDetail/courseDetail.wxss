@@ -5,7 +5,6 @@
 }
 .container .course-info {
   width: 670rpx;
-  height: 276rpx;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 20rpx;
