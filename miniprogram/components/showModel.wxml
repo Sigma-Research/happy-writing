@@ -10,10 +10,10 @@
             <slot></slot>
         </view>
         <view class="button-wrapper">
-            <view class="button cancel" bindtap="onCancel" wx:if="{{showModelData.type === 'double'}}">
+            <button size="mini" class="button cancel" bindtap="onCancel" wx:if="{{showModelData.type === 'double'}}">
                 {{showModelData.cancelText}}
-            </view>
-            <button open-type="{{showModelData.openType}}" class="button" bindtap="onConfirm">
+            </button>
+            <button size="mini" open-type="{{showModelData.openType}}" class="button" bindtap="onConfirm">
                 {{showModelData.confirmText}}
             </button>
         </view>

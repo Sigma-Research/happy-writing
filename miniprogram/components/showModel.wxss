@@ -50,6 +50,7 @@
   width: 100%;
 }
 .showModel-wrapper .showModel .button-wrapper .button {
+  line-height: 28rpx;
   font-size: 28rpx;
   padding: 20rpx 80rpx;
   border-radius: 40rpx;
