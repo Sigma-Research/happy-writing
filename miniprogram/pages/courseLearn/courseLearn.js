@@ -16,6 +16,7 @@ Page({
       id: 'hz-writer1',
       character: '你',
       page: this,
+      renderer: 'canvas'
     });
     this.writerCtx2 = createHanziWriterContext({
       id: 'hz-writer2',
@@ -44,15 +45,7 @@ Page({
     });
 
 
-    // You can call any normal HanziWriter method here
-    this.writerCtx1.loopCharacterAnimation();
-    this.writerCtx2.loopCharacterAnimation();
 
-    this.writerCtx3.loopCharacterAnimation();
-    this.writerCtx4.loopCharacterAnimation();
-    this.writerCtx5.loopCharacterAnimation();
-
-    this.writerCtx6.loopCharacterAnimation();
 
   },
 
@@ -60,14 +53,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    // 使用 wx.createAudioContext 获取 audio 上下文 context
-    this.audioCtx = wx.createAudioContext('myAudio')
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // You can call any normal HanziWriter method here
+    this.writerCtx1.loopCharacterAnimation();
 
   },
 

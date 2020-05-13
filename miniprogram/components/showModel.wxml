@@ -13,9 +13,9 @@
             <view class="button cancel" bindtap="onCancel" wx:if="{{showModelData.type === 'double'}}">
                 {{showModelData.cancelText}}
             </view>
-            <view class="button" bindtap="onConfirm">
+            <button open-type="{{showModelData.openType}}" class="button" bindtap="onConfirm">
                 {{showModelData.confirmText}}
-            </view>
+            </button>
         </view>
     </view>
 </view>

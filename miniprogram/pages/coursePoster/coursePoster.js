@@ -5,7 +5,11 @@ Page({
     tipsShowModelState: false,
     tipsShowModelData: null,
     formShowModelData: null,
-    getCodeButtonState: false
+    getCodeButtonState: false,
+    cellphoneValue: null,
+    verificationCodePlaceholder: '验证码',
+    verificationButtonValue: '获取验证码',
+    verified: false,
   },
   onLoad: function (options) {
 
@@ -38,7 +42,8 @@ Page({
         type: 'single',
         title: '确认手机号',
         content: '',
-        confirmText: '完成报名'
+        confirmText: '完成报名',
+        openType: 'contact'
       }
     })
   },
@@ -66,17 +71,45 @@ Page({
     this.setData({
       formShowModelState: true,
       tipsShowModelState: false,
+      cellphoneValue: null
     })
   },
   getVerificationCode () {
     if (this.data.getCodeButtonState) {
-
+      //后台接口
+      this.setData({
+        getCodeButtonState: false,
+        verified: true
+      })
+      let time = 60
+      let interval = setInterval(function () {
+        time--
+        if (time <= 0) {
+          this.setData({
+            getCodeButtonState: true,
+            verificationButtonValue: '获取验证码',
+            verified: false
+          })
+          clearInterval(interval)
+        }
+        this.setData({
+          verificationButtonValue: time + 's'
+        })
+      }.bind(this), 1000)
     }
   },
-  inputEdit (e) {
+  inputCellphoneNumber (e) {
     const regExp = /^[1](([3][0-9])|([4][5-9])|([5][0-3,5-9])|([6][5,6])|([7][0-8])|([8][0-9])|([9][1,8,9]))[0-9]{8}$/
     this.setData({
-      getCodeButtonState: regExp.test(e.detail.value)
+      cellphoneValue: e.detail.value,
+      getCodeButtonState: regExp.test(e.detail.value) && !this.data.verified,
+      verificationCodePlaceholder: regExp.test(e.detail.value) ? '请获取验证码' : '请填写正确的手机号'
+    })
+  },
+  clearCellphoneNumber () {
+    this.setData({
+      cellphoneValue: null,
+      verificationCodePlaceholder: '验证码'
     })
   }
 })

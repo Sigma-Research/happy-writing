@@ -15,15 +15,16 @@
 
 <showModel wx:if="{{formShowModelState}}"
            showModelData="{{formShowModelData}}"
-           bindconfirm=""
+           bindconfirm="console.log(123)"
            bindhidden="toTips">
     <view class="table">
-        <input type="number" class="cellphone-number" bindinput="inputEdit"></input>
-        <image></image>
+        <input type="number" value="{{cellphoneValue}}" placeholder-style="color: #999896;font-weight: normal" placeholder="请输入手机号码" class="cellphone-number" bindinput="inputCellphoneNumber"></input>
+        <image bindtap="clearCellphoneNumber"></image>
     </view>
     <view class="table addMargin">
-        <input type="number"></input>
-        <view class="{{getCodeButtonState ? 'getCodeButton' : 'getCodeButton disable'}}" bindtap="getVerificationCode">获取验证码</view>
+        <input type="number" placeholder-style="color: #999896; font-weight: normal" placeholder="{{verificationCodePlaceholder}}"></input>
+        <view class="{{getCodeButtonState ? 'getCodeButton' : 'getCodeButton disable'}}" bindtap="getVerificationCode">
+            {{verificationButtonValue}}</view>
     </view>
 </showModel>
 
