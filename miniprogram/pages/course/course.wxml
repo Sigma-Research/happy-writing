@@ -13,6 +13,7 @@
                     <view class="startButton">去学习</view>
                 </view>
             </view>
+            <view style="text-align: center;margin-top: 40rpx">已完结课程</view>
         </view>
     </view>
     <view class="section unregistered">
@@ -29,7 +30,7 @@
                         <view class="previous">￥299</view>
                     </view>
                 </view>
-                <view class="course-button">去学习</view>
+                <view class="course-button" bindtap="toCoursePoster">去学习</view>
             </view>
             <view class="course">
                 <image class="course-image"></image>
@@ -58,4 +59,7 @@
         </view>
     </view>
     <view class="noCourse">暂无报名任何课程，挑选以下课程进行报名</view>
+    <view class="footer signUpButton">
+        <button size="mini">联系班主任</button>
+    </view>
 </view>
