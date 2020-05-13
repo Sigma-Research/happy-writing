@@ -59,7 +59,4 @@
         </view>
     </view>
     <view class="noCourse">暂无报名任何课程，挑选以下课程进行报名</view>
-    <view class="footer signUpButton">
-        <button size="mini">联系班主任</button>
-    </view>
 </view>

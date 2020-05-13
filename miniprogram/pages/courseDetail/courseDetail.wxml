@@ -66,6 +66,9 @@
             </view>
         </view>
     </view>
+    <view class="footer signUpButton">
+        <button size="mini">联系班主任</button>
+    </view>
 </view>
 <showModel wx:if="{{disableShowModelState}}"
            showModelData="{{disableShowModelData}}"
