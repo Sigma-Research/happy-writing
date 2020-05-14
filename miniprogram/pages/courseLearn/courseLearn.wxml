@@ -63,6 +63,10 @@
             <view class="subtitle">已完成 12/30</view>
             作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容
         </view>
+        <button size="mini"
+                class="table-button"
+                bindtap="toHomeworkDetail"
+        >开始学习</button>
     </view>
 <!--    <view class="section display">-->
 <!--        <view class="section-title">书写展示</view>-->
