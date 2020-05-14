@@ -1,33 +1,29 @@
 <!--miniprogram/pages/homeworkDetail/homeworkDetail.wxml-->
 <view class="container">
-    <view class="section">
-        <view class="section-title">我的作业</view>
-        <view class="section-content">
-            <view class="text">点击按钮开始上传作业</view>
-            <view>
-                <view class="addHomeworkButton" bindtap="test">点击添加作业</view>
-            </view>
-            <view class="hint">如何添加作业</view>
+    <view class="section upload">
+        <view class="section-title">
+            我的作业
         </view>
-        <scroll-view scroll-y class="uploaded">
-            <image></image>
-            <image></image>
-            <image></image>
-            <image></image>
-            <image></image>
-            <image></image>
-            <image></image>
-            <image></image>
-        </scroll-view>
-        <view class="section-content">
-            <view>
-                <view class="alertHomeworkButton">已完成，点击修改作业</view>
-            </view>
-            <view class="hint">如何添加作业</view>
+        <view class="section-subtitle">
+            点击按钮上传作业
         </view>
+        <button class="table-button">
+            添加作业
+        </button>
     </view>
-    <view class="footer">
+    <image class="homework">
 
-    </view>
+    </image>
+    <button class="table-button test">
+        修改作业
+    </button>
+
+</view>
+<view class="footer">
+    <button class="table-button">
+        修改作业
+    </button>
+    <image></image>
+    <image></image>
 </view>
 
