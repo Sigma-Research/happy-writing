@@ -65,30 +65,38 @@
   font-weight: bolder;
   margin-bottom: 16rpx;
 }
-.container .course .course-section .video {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 32rpx;
+.container .course .course-section .title .subtitle {
+  font-size: 24rpx;
+  font-weight: normal;
+  color: #CCCBC8;
+  display: inline;
 }
-.container .course .course-section .video .image {
-  border-radius: 20rpx;
-  background-color: #b3c7e6;
-  width: 240rpx;
-  height: 144rpx;
+.container .course .course-section .videoWrapper {
+  white-space: nowrap;
+}
+.container .course .course-section .videoWrapper .video {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 32rpx;
   margin-right: 16rpx;
 }
-.container .course .course-section .video .videoInfo {
-  height: 92rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.container .course .course-section .videoWrapper .video .image {
+  border-radius: 20rpx;
+  background-color: #b3c7e6;
+  width: 260rpx;
+  height: 154rpx;
 }
-.container .course .course-section .video .videoInfo .title {
+.container .course .course-section .videoWrapper .video .video-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   font-weight: bolder;
-  font-size: 32rpx;
+  font-size: 24rpx;
 }
-.container .course .course-section .video .videoInfo .duration {
+.container .course .course-section .videoWrapper .video .duration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   font-size: 24rpx;
   color: #666564;
 }
@@ -116,7 +124,7 @@
 .container .communication {
   width: 750rpx;
   padding-left: 40rpx;
-  box-sizing: border-box;
+  box-sizing: b order-box;
 }
 .container .communication .content {
   white-space: nowrap;

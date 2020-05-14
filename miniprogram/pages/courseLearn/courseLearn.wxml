@@ -23,107 +23,117 @@
             </view>
         </view>
         <view class="course-section">
-            <view class="title">主标题</view>
-            <view class="videoWrapper">
-                <view class="video">
-                    <image class="image"></image>
-                    <view class="videoInfo">
-                        <view class="title">视频标题</view>
-                        <view class="duration">视频时长：14分钟</view>
-                    </view>
+            <view class="title">课程内容<view class="subtitle">已完成 12/30</view></view>
+            <scroll-view scroll-x class="videoWrapper">
+                <view class="video" bindtap="createVideo">
+                    <video class="image"
+                           controls="{{videoFullscreenState}}"
+                           show-progress="{{videoFullscreenState}}"
+                           show-fullscreen-btn="{{videoFullscreenState}}"
+                           show-play-btn="{{videoFullscreenState}}"
+                           show-center-play-btn="{{videoFullscreenState}}"
+                           enable-progress-gesture="{{videoFullscreenState}}"
+                           id="testV"
+                           bindfullscreenchange="changeFullscreen"
+                           bindended="videoEnd"
+                           src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+                    ></video>
+                    <view class="video-title">视频标题</view>
+                    <view class="duration">视频时长：14分钟</view>
                 </view>
                 <view class="video">
                     <image class="image"></image>
-                    <view class="videoInfo">
-                        <view class="title">视频标题</view>
-                        <view class="duration">视频时长：14分钟</view>
-                    </view>
+                    <view class="video-title">视频标题</view>
+                    <view class="duration">视频时长：14分钟</view>
                 </view>
-            </view>
+                <view class="video">
+                    <image class="image"></image>
+                    <view class="video-title">视频标题</view>
+                    <view class="duration">视频时长：14分钟</view>
+                </view>
+                <view class="video">
+                    <image class="image"></image>
+                    <view class="video-title">视频标题</view>
+                    <view class="duration">视频时长：14分钟</view>
+                </view>
+            </scroll-view>
         </view>
         <view class="course-section">
-            <view class="title">主标题</view>
-            <view class="videoWrapper">
-                <view class="video">
-                    <image class="image"></image>
-                    <view class="videoInfo">
-                        <view class="title">视频标题</view>
-                        <view class="duration">视频时长：14分钟</view>
-                    </view>
-                </view>
-            </view>
+            <view class="title">课程内容</view>
+            <view class="subtitle">已完成 12/30</view>
+            作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容
         </view>
     </view>
-    <view class="section display">
-        <view class="section-title">书写展示</view>
-        <view class="section-subtitle .hint">点击查看写字顺序笔法</view>
-        <scroll-view scroll-x class="section-content">
-            <view class="hanzi">
-                <hanzi-writer-view id="hz-writer1" width="100" height="100" />
-            </view>
-            <view class="hanzi">
-                <hanzi-writer-view id="hz-writer2" width="100" height="100" />
-            </view>
-            <view class="hanzi">
-                <hanzi-writer-view id="hz-writer3" width="100" height="100" />
-            </view>
-            <view class="hanzi">
-                <hanzi-writer-view id="hz-writer4" width="100" height="100" />
-            </view>
-            <view class="hanzi">
-                <hanzi-writer-view id="hz-writer5" width="100" height="100" />
-            </view>
-            <view class="hanzi">
-                <hanzi-writer-view id="hz-writer6" width="100" height="100" />
-            </view>
-        </scroll-view>
-    </view>
-    <view class="section exercise">
-        <view class="section-title">作业练习</view>
-        <view class="section-subtitle .hint">作业描述</view>
-        <view class="section-content">
-        </view>
-    </view>
-    <view class="section communication">
-        <view class="section-title">作业交流</view>
-        <scroll-view scroll-x class="content">
-            <view class="work">
-                <image class="image"></image>
-                <view class="info">
-                    <view class="name">曾家平</view>
-                    <view class="icon">
-                        <image class="heart"></image>
-                        238
-                    </view>
-                    <view class="date">作业时间：2020-02-25</view>
-                </view>
-            </view>
-            <view class="work">
-                <image class="image"></image>
-                <view class="info">
-                    <view class="name">曾家平</view>
-                    <view class="icon">
-                        <image class="heart"></image>
-                        238
-                    </view>
-                    <view class="date">作业时间：2020-02-25</view>
-                </view>
-            </view>
-            <view class="work">
-                <image class="image"></image>
-                <view class="info">
-                    <view class="name">崔文豪</view>
-                    <view class="icon">
-                        <image class="heart"></image>
-                        238
-                    </view>
-                    <view class="date">作业时间：2020-02-25</view>
-                </view>
-            </view>
-        </scroll-view>
-    </view>
-    <view class="buttonGroup">
-        <view class="button">上一节</view>
-        <view class="button">下一节</view>
-    </view>
+<!--    <view class="section display">-->
+<!--        <view class="section-title">书写展示</view>-->
+<!--        <view class="section-subtitle .hint">点击查看写字顺序笔法</view>-->
+<!--        <scroll-view scroll-x class="section-content">-->
+<!--            <view class="hanzi">-->
+<!--                <hanzi-writer-view id="hz-writer1" width="100" height="100" />-->
+<!--            </view>-->
+<!--            <view class="hanzi">-->
+<!--                <hanzi-writer-view id="hz-writer2" width="100" height="100" />-->
+<!--            </view>-->
+<!--            <view class="hanzi">-->
+<!--                <hanzi-writer-view id="hz-writer3" width="100" height="100" />-->
+<!--            </view>-->
+<!--            <view class="hanzi">-->
+<!--                <hanzi-writer-view id="hz-writer4" width="100" height="100" />-->
+<!--            </view>-->
+<!--            <view class="hanzi">-->
+<!--                <hanzi-writer-view id="hz-writer5" width="100" height="100" />-->
+<!--            </view>-->
+<!--            <view class="hanzi">-->
+<!--                <hanzi-writer-view id="hz-writer6" width="100" height="100" />-->
+<!--            </view>-->
+<!--        </scroll-view>-->
+<!--    </view>-->
+<!--    <view class="section exercise">-->
+<!--        <view class="section-title">作业练习</view>-->
+<!--        <view class="section-subtitle .hint">作业描述</view>-->
+<!--        <view class="section-content">-->
+<!--        </view>-->
+<!--    </view>-->
+<!--    <view class="section communication">-->
+<!--        <view class="section-title">作业交流</view>-->
+<!--        <scroll-view scroll-x class="content">-->
+<!--            <view class="work">-->
+<!--                <image class="image"></image>-->
+<!--                <view class="info">-->
+<!--                    <view class="name">曾家平</view>-->
+<!--                    <view class="icon">-->
+<!--                        <image class="heart"></image>-->
+<!--                        238-->
+<!--                    </view>-->
+<!--                    <view class="date">作业时间：2020-02-25</view>-->
+<!--                </view>-->
+<!--            </view>-->
+<!--            <view class="work">-->
+<!--                <image class="image"></image>-->
+<!--                <view class="info">-->
+<!--                    <view class="name">曾家平</view>-->
+<!--                    <view class="icon">-->
+<!--                        <image class="heart"></image>-->
+<!--                        238-->
+<!--                    </view>-->
+<!--                    <view class="date">作业时间：2020-02-25</view>-->
+<!--                </view>-->
+<!--            </view>-->
+<!--            <view class="work">-->
+<!--                <image class="image"></image>-->
+<!--                <view class="info">-->
+<!--                    <view class="name">崔文豪</view>-->
+<!--                    <view class="icon">-->
+<!--                        <image class="heart"></image>-->
+<!--                        238-->
+<!--                    </view>-->
+<!--                    <view class="date">作业时间：2020-02-25</view>-->
+<!--                </view>-->
+<!--            </view>-->
+<!--        </scroll-view>-->
+<!--    </view>-->
+<!--    <view class="buttonGroup">-->
+<!--        <view class="button">上一节</view>-->
+<!--        <view class="button">下一节</view>-->
+<!--    </view>-->
 </view>

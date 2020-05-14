@@ -53,26 +53,33 @@
         font-size: 32rpx
         font-weight: bolder
         margin-bottom: 16rpx
-      .video
-        display: flex
-        flex-direction: row
-        align-items: center
-        margin-bottom: 32rpx
-        .image
-          border-radius: 20rpx
-          background-color: #b3c7e6
-          width: 240rpx
-          height: 144rpx
+        .subtitle
+          font-size: 24rpx
+          font-weight: normal
+          color: #CCCBC8
+          display: inline
+      .videoWrapper
+        white-space: nowrap
+        .video
+          position: relative
+          display: inline-block
+          margin-bottom: 32rpx
           margin-right: 16rpx
-        .videoInfo
-          height: 92rpx
-          display: flex
-          flex-direction: column
-          justify-content: space-between
-          .title
+          .image
+            border-radius: 20rpx
+            background-color: #b3c7e6
+            width: 260rpx
+            height: 154rpx
+          .video-title
+            position: absolute
+            bottom: 0
+            left: 0
             font-weight: bolder
-            font-size: 32rpx
+            font-size: 24rpx
           .duration
+            position: absolute
+            bottom: 0
+            right: 0
             font-size: 24rpx
             color: #666564
   .section
@@ -94,7 +101,7 @@
   .communication
     width: 750rpx
     padding-left: 40rpx
-    box-sizing: border-box
+    box-sizing: b order-box
     .content
       white-space: nowrap
       margin-top: 16rpx
