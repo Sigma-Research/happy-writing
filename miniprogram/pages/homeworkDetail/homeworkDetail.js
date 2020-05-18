@@ -69,7 +69,6 @@ Page({
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success (res) {
-
       }
     })
   }

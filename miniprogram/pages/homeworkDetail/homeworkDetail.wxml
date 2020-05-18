@@ -7,7 +7,7 @@
         <view class="section-subtitle">
             点击按钮上传作业
         </view>
-        <button class="table-button">
+        <button class="table-button" bindtap="test">
             添加作业
         </button>
     </view>
