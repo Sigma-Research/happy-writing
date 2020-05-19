@@ -8,11 +8,12 @@ Page({
     takeSession: false,
     requestResult: ''
   },
-
   onLoad: function() {
     this.onGetOpenid(this.insertUser)
   },
+  //插入用户表
   insertUser: () => {
+    //判断用户是否已存在
     db.collection('t_user').where({
       _openid: app.globalData.openid
     }).count().then(res => {
@@ -20,16 +21,12 @@ Page({
         db.collection('t_user').add({
           data: {
             create_date: new Date().toLocaleDateString()
-          },
-          success: function(res) {
-            console.log(res)
-          },
-          fail: console.error,
+          }
         })
       }
     })
   },
-  onGetOpenid: function(callback) {
+  onGetOpenid: (callback) => {
     // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
@@ -41,6 +38,21 @@ Page({
       },
       fail: err => {
         console.error('[云函数] [login] 调用失败', err)
+      }
+    })
+  },
+  getHomeworkList: () => {
+    db.collection('t_homework').get().then(res => {
+      if (!res.total) {
+        db.collection('t_user').add({
+          data: {
+            create_date: new Date().toLocaleDateString()
+          },
+          success: function(res) {
+            console.log(res)
+          },
+          fail: console.error,
+        })
       }
     })
   },
