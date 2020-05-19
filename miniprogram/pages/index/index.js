@@ -1,14 +1,18 @@
 //index.js
 const app = getApp()
 const db = wx.cloud.database()
+
 Page({
   data: {
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    homeworkListIndex: 0,
+    homeworkList: [],
+    recommendCourse: null,
   },
-  onLoad: function() {
+  onLoad: function () {
     this.onGetOpenid(this.insertUser)
   },
   //插入用户表
@@ -26,8 +30,8 @@ Page({
       }
     })
   },
+  // 调用云函数获取用户 openID
   onGetOpenid: (callback) => {
-    // 调用云函数
     wx.cloud.callFunction({
       name: 'login',
       data: {},
@@ -41,24 +45,38 @@ Page({
       }
     })
   },
-  getHomeworkList: () => {
-    db.collection('t_homework').get().then(res => {
-      if (!res.total) {
-        db.collection('t_user').add({
-          data: {
-            create_date: new Date().toLocaleDateString()
-          },
-          success: function(res) {
-            console.log(res)
-          },
-          fail: console.error,
+  // 获取作业广场数据
+  getHomeworkList: function (callback) {
+    db.collection('t_homework')
+        .limit(10)
+        .skip(this.data.homeworkListIndex)
+        .get()
+        .then(res => {
+          this.setData({
+            homeworkListIndex: this.data.homeworkListIndex + 10,
+            homeworkList: [...this.data.homeworkList, ...res.data]
+          })
+          console.log(this.data.homeworkList)
         })
-      }
+  },
+  // 获取推荐课程数据
+  getRecommendCourse: function () {
+    db.collection('t_course').where({
+      recommend: true
+    }).get().then(res => {
+      this.setData({
+        recommendCourse: res.data[0]
+      })
     })
+  },
+  // 监听上拉事件
+  onReachBottom: function () {
+    this.getHomeworkList()
   },
   toCoursePoster: () => {
     wx.navigateTo({
-      url: '../coursePoster/coursePoster'
+      url: '../coursePoster/coursePoster',
+      data: this.data.recommendCourse
     })
   },
   toHomeworkDetail: () => {
