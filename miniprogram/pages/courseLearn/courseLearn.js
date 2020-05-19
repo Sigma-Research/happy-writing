@@ -13,6 +13,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('getCourseData', (res) => {
+      console.log(res.data)
+    })
     // this.writerCtx1 = createHanziWriterContext({
     //   id: 'hz-writer1',
     //   character: '你',

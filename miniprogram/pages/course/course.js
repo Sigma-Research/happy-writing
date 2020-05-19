@@ -62,9 +62,14 @@ Page({
       })
     })
   },
-  toCourseDetail: () => {
+  toCourseDetail: (index) => {
     wx.navigateTo({
-      url: '../courseDetail/courseDetail'
+      url: '../courseDetail/courseDetail',
+      success: (res) => {
+        res.eventChannel.emit('getCourseData', {
+          data: this.data.registeredCourse[index]
+        })
+      }
     })
   },
   toCoursePoster: () => {
