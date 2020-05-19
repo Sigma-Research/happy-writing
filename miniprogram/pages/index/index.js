@@ -14,6 +14,7 @@ Page({
   },
   onLoad: function () {
     this.onGetOpenid(this.insertUser)
+    this.getRecommendCourse()
   },
   //插入用户表
   insertUser: () => {
@@ -73,10 +74,14 @@ Page({
   onReachBottom: function () {
     this.getHomeworkList()
   },
-  toCoursePoster: () => {
+  toCoursePoster: function() {
     wx.navigateTo({
       url: '../coursePoster/coursePoster',
-      data: this.data.recommendCourse
+      success: (res) => {
+        res.eventChannel.emit('getRecommendCourseData', {
+          data: this.data.recommendCourse
+        })
+      }
     })
   },
   toHomeworkDetail: () => {

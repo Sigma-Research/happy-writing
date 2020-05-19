@@ -12,7 +12,10 @@ Page({
     verified: false,
   },
   onLoad: function (options) {
-
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('getRecommendCourseData', (res) => {
+      console.log(res.data)
+    })
   },
   onReady: function () {
 
