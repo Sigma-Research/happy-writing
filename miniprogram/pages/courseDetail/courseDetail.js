@@ -1,11 +1,28 @@
-// miniprogram/pages/courseDetail/courseDetail.js
+// courseDetail.js
+const app = getApp()
+const db = wx.cloud.database()
+
 Page({
   data: {
     disableShowModelState: false,
-    disableShowModelData: null
+    disableShowModelData: null,
+    coursePublicData: null,
+    coursePrivateData: null,
   },
   onLoad: function (options) {
-
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('getCourseData', (res) => {
+      const coursePublicData = res.data
+      db.collection('t_user').where({
+        _openid: app.globalData.openid
+      }).get().then(res => {
+        const coursePrivateData = res.data[0].course[coursePublicData._id]
+        this.setData({
+          coursePublicData,
+          coursePrivateData
+        })
+      })
+    })
   },
   onReady: function () {
 
@@ -28,9 +45,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  toCourseLearn: () => {
+  toCourseLearn: (index) => {
     wx.navigateTo({
-      url: '../courseLearn/courseLearn'
+      url: '../courseLearn/courseLearn',
+      success: (res) => {
+        res.eventChannel.emit('getCourseData', {
+          coursePrivateData: this.data.coursePrivateData,
+          coursePublicData: this.data.coursePublicData,
+          index
+        })
+      }
     })
   },
   learnDisable() {
