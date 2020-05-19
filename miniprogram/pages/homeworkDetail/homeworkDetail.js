@@ -1,10 +1,20 @@
-// miniprogram/pages/homeworkDetail/homeworkDetail.js
+// homeworkDetail.js
+const app = getApp()
+const db = wx.cloud.database()
+
 Page({
   data: {
 
   },
   onLoad: function (options) {
+    const eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('getHomeworkDetail', (res) => {
+      db.collection('t_homework').where({
+        _id: res.id
+      }).get().then(res => {
 
+      })
+    })
   },
   onReady: function () {
 

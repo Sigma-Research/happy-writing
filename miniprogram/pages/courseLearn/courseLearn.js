@@ -2,7 +2,10 @@
 // import createHanziWriterContext from 'hanzi-writer-miniprogram';
 Page({
   data: {
-    videoFullscreenState: false
+    videoFullscreenState: false,
+    coursePublicData: null,
+    coursePrivateData: null,
+    index: null
   },
   onLoad: function (options) {
     const eventChannel = this.getOpenerEventChannel()
@@ -37,9 +40,14 @@ Page({
   },
   onShareAppMessage: function () {
   },
-  toHomeworkDetail: (index) => {
+  toHomeworkDetail: () => {
     wx.navigateTo({
-      url: '../homeworkDetail/homeworkDetail'
+      url: '../homeworkDetail/homeworkDetail',
+      success: (res) => {
+        res.eventChannel.emit('getHomeworkDetail', {
+          id: this.data.coursePrivateData[homework_id]
+        })
+      }
     })
   },
   changeFullscreen: function () {
