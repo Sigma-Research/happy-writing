@@ -15,6 +15,7 @@ Page({
   onLoad: function () {
     this.onGetOpenid(this.insertUser)
     this.getRecommendCourse()
+    this.getHomeworkList()
   },
   //插入用户表
   insertUser: () => {
@@ -47,7 +48,7 @@ Page({
     })
   },
   // 获取作业广场数据
-  getHomeworkList: function (callback) {
+  getHomeworkList: function () {
     db.collection('t_homework')
         .limit(10)
         .skip(this.data.homeworkListIndex)
@@ -68,6 +69,7 @@ Page({
       this.setData({
         recommendCourse: res.data[0]
       })
+      console.log(this.data.recommendCourse)
     })
   },
   // 监听上拉事件
