@@ -4,9 +4,9 @@ const db = wx.cloud.database()
 
 Page({
   data: {
-    registeredCourse: [],
-    unregisteredCourse: [],
-    userCourse: []
+    registeredCourse: [],   // 已报名课程数组列表
+    unregisteredCourse: [], // 未报名课程数组列表
+    userCourse: []          // 用户已报名课程的 ID 数组
   },
   onShow: async function (options) {
     if (!app.globalData.userData) {
@@ -17,7 +17,7 @@ Page({
   },
   onReady: function () {
   },
-  // 获取用户已报名课程 ID 列表
+  // 获取用户已报名课程的 ID 数组
   getUserCourse: function () {
     const userCourse = Object.keys(app.globalData.userData.course)
     console.log('获取用户已报名课程ID数组', userCourse)
@@ -33,7 +33,7 @@ Page({
       const unregisteredCourse = []
       res.data.map(course => {
         if (this.data.userCourse.includes(course._id)) registeredCourse.push(course)
-        unregisteredCourse.push(course)
+        else unregisteredCourse.push(course)
       })
       this.setData({
         registeredCourse,
@@ -43,6 +43,7 @@ Page({
       console.log('得到 unregisteredCourse 列表', unregisteredCourse)
     })
   },
+  // 跳转课程详情页
   toCourseDetail: (index) => {
     wx.navigateTo({
       url: '../courseDetail/courseDetail',
@@ -53,7 +54,7 @@ Page({
       }
     })
   },
-  // 跳转课程海报页面(课程信息)
+  // 跳转课程海报页
   toCoursePoster: function (e) {
     const that = this
     wx.navigateTo({
