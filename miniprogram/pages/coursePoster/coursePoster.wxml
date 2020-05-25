@@ -5,8 +5,14 @@
         <view class="hint">
             限时免费领取 <view class="highlight">777</view> 元 【精品课】 剩余 <view class="highlight">12:59:59</view>
         </view>
-        <button open-type="getPhoneNumber"
-                bindgetphonenumber="toForm"
+        <button wx:if="{{registerState}}"
+                size="mini"
+                class="table-button"
+                bindtap="xxxx"
+        >已报名 点击进入课程</button>
+        <button wx:else
+                open-type="getPhoneNumber"
+                bindgetphonenumber="getPhoneNumber"
                 size="mini"
                 class="table-button"
                 >立即报名</button>
@@ -15,7 +21,7 @@
 
 <showModel wx:if="{{formShowModelState}}"
            showModelData="{{formShowModelData}}"
-           bindconfirm="console.log(123)"
+           bindconfirm="registerCourse"
            bindhidden="toTips">
     <view class="table">
         <input type="number" value="{{cellphoneValue}}" placeholder-style="color: #999896;font-weight: normal" placeholder="请输入手机号码" class="cellphone-number" bindinput="inputCellphoneNumber"></input>

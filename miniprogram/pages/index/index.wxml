@@ -4,7 +4,7 @@
     <view class="section" id="square">
         <view class="section-title">写字广场</view>
         <view class="section-content">
-            <view wx:for="{{homeworkList}} ">
+            <view wx:key="unique" wx:for="{{homeworkList}} ">
                 <view class="work" bindtap="toHomeworkDetail">
                     <image class="image"></image>
                     <view class="detail">第32天练习写字，一天比一天进步</view>

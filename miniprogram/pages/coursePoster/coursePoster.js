@@ -13,12 +13,17 @@ Page({
     verificationCodePlaceholder: '验证码',
     verificationButtonValue: '获取验证码',
     verified: false,
+    coursePublicData: null,
+    coursePrivateData: null,
+    registerState: undefined
   },
-  onLoad: function (options) {
-    const eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('getRecommendCourseData', (res) => {
-      console.log(res.data)
-    })
+  onLoad: async function (options) {
+    if (!app.globalData.userData) {
+      console.log('全局中未存储用户信息')
+      await app.getUserData()
+    }
+    await this.onGetCourseData()
+    this.getRegisterState()
   },
   onReady: function () {
 
@@ -26,22 +31,42 @@ Page({
   onShow: function () {
 
   },
-  onHide: function () {
-
+  //监听 getCourseData | 触发设置页面的课程公共数据
+  onGetCourseData: async function () {
+    const eventChannel = this.getOpenerEventChannel()
+    await eventChannel.on('getCourseData', this.setCoursePublicData)
   },
-  onUnload: function () {
-
+  //设置页面的课程公共数据
+  setCoursePublicData: function (res) {
+    this.setData({
+      coursePublicData: res.data
+    })
+    console.log('触发 getCourseData()')
+    console.log('页面课程公共数据:', res.data)
   },
-  onPullDownRefresh: function () {
-
+  //设置页面的课程报名状态
+  getRegisterState: function () {
+    this.setData({
+      registerState: this.data.coursePublicData._id in app.globalData.userData.course
+    })
+    console.log('课程报名状态:', this.data.registerState)
   },
-  onReachBottom: function () {
-
+  //获取用户手机号
+  getPhoneNumber: async function (e) {
+    await wx.cloud.callFunction({
+      name: 'getPhoneNumber',
+      data: {
+        phoneNumber: wx.cloud.CloudID(e.detail.cloudID)
+      }
+    }).then(res => {
+      console.log('获取用户手机号：',res.result.event.phoneNumber.data.purePhoneNumber)
+      this.setData({
+        cellphoneValue: parseInt(res.result.event.phoneNumber.data.purePhoneNumber)
+      })
+    })
+    this.toForm()
   },
-  onShareAppMessage: function () {
-
-  },
-  toForm (e) {
+  toForm () {
     this.setData({
       formShowModelState: true,
       formShowModelData: {
@@ -67,6 +92,24 @@ Page({
       }
     })
   },
+  initCourseData () {
+    return {
+      [this.data.coursePublicData._id]: {
+        course_state: true,
+        sub_course: {}
+      }
+    }
+  },
+  registerCourse () {
+    db.collection('t_user').doc(app.globalData.userData._id).update({
+      data: {
+        course: Object.assign( app.globalData.userData.course, this.initCourseData())
+      },
+      success: function(res) {
+        console.log(`报名ID为${this.data.coursePublicData._id}的课程`, res.data)
+      }
+    })
+  },
   closeForm () {
     this.setData({
       formShowModelState: false,
@@ -77,7 +120,6 @@ Page({
     this.setData({
       formShowModelState: true,
       tipsShowModelState: false,
-      cellphoneValue: null
     })
   },
   getVerificationCode () {

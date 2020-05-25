@@ -8,42 +8,21 @@ Page({
     unregisteredCourse: [],
     userCourse: []
   },
-  onLoad: function (options) {
+  onLoad: async function (options) {
+    if (!app.globalData.userData) {
+      console.log('全局中未存储用户信息')
+      await app.getUserData()
+    }
     this.getCourse()
   },
   onReady: function () {
-
-  },
-  onShow: function () {
-
-  },
-  onHide: function () {
-
-  },
-  onUnload: function () {
-
-  },
-  onPullDownRefresh: function () {
-
-  },
-  onReachBottom: function () {
-
-  },
-  onShareAppMessage: function () {
-
   },
   // 获取用户已报名课程 ID 列表
-  getUserCourse: async function () {
-    await db.collection('t_user').where({
-      _openid: app.globalData.openid
-    }).get().then(res => {
-      const userCourse = []
-      res.data[0].map(obj => {
-        userCourse.push(obj.course_id)
-      })
-      this.setData({
-        userCourse
-      })
+  getUserCourse: function () {
+    const userCourse = Object.keys(app.globalData.userData.course)
+    console.log('获取用户已报名课程ID数组', userCourse)
+    this.setData({
+      userCourse
     })
   },
   // 获取课程并根据是否报名分类
@@ -60,6 +39,8 @@ Page({
         registeredCourse,
         unregisteredCourse
       })
+      console.log('得到 registeredCourse 列表', registeredCourse)
+      console.log('得到 unregisteredCourse 列表', unregisteredCourse)
     })
   },
   toCourseDetail: (index) => {
@@ -72,9 +53,16 @@ Page({
       }
     })
   },
-  toCoursePoster: () => {
+  // 跳转课程海报页面(课程信息)
+  toCoursePoster: function (e) {
+    const that = this
     wx.navigateTo({
-      url: '../coursePoster/coursePoster'
+      url: '../coursePoster/coursePoster',
+      success(res) {
+        res.eventChannel.emit('getCourseData', {
+          data: that.data.unregisteredCourse[e.currentTarget.dataset.index]
+        })
+      }
     })
   }
 })

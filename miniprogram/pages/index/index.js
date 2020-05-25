@@ -18,18 +18,24 @@ Page({
     this.getHomeworkList()
   },
   //插入用户表
-  insertUser: () => {
+  insertUser: function () {
     //判断用户是否已存在
     db.collection('t_user').where({
       _openid: app.globalData.openid
-    }).count().then(res => {
+    }).count().then(async res => {
       if (!res.total) {
-        db.collection('t_user').add({
+        console.log('用户不存在')
+        await db.collection('t_user').add({
           data: {
-            create_date: new Date().toLocaleDateString()
+            create_date: new Date().toLocaleDateString(),
+            course: {},
+            tel: null,
+            nickname: null,
+            info: {}
           }
         })
-      }
+      } else console.log('用户存在')
+      app.getUserData()
     })
   },
   // 调用云函数获取用户 openID
@@ -38,7 +44,7 @@ Page({
       name: 'login',
       data: {},
       success: res => {
-        console.log('[云函数] [login] user openid: ', res.result.openid)
+        console.log('[云函数] [login] 调用成功 openID: ', res.result.openid)
         app.globalData.openid = res.result.openid
         callback()
       },
@@ -58,7 +64,7 @@ Page({
             homeworkListIndex: this.data.homeworkListIndex + 10,
             homeworkList: [...this.data.homeworkList, ...res.data]
           })
-          console.log(this.data.homeworkList)
+          console.log('获取作业广场数据: ',this.data.homeworkList)
         })
   },
   // 获取推荐课程数据
@@ -69,7 +75,7 @@ Page({
       this.setData({
         recommendCourse: res.data[0]
       })
-      console.log(this.data.recommendCourse)
+      console.log('获取推荐课程数据: ',this.data.recommendCourse)
     })
   },
   // 监听上拉事件
@@ -80,7 +86,7 @@ Page({
     wx.navigateTo({
       url: '../coursePoster/coursePoster',
       success: (res) => {
-        res.eventChannel.emit('getRecommendCourseData', {
+        res.eventChannel.emit('getCourseData', {
           data: this.data.recommendCourse
         })
       }
