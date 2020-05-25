@@ -78,7 +78,7 @@ Page({
         title: '确认手机号',
         content: '',
         confirmText: '完成报名',
-        /*openType: 'contact'*/
+        openType: 'contact'
       }
     })
   },
@@ -114,6 +114,7 @@ Page({
       },
       success: function(res) {
         console.log(`报名ID为${this.data.coursePublicData._id}的课程`, res.data)
+        this.closeForm()
       }
     })
   },

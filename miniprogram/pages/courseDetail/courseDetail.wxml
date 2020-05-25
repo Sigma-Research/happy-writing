@@ -1,20 +1,20 @@
 <!--miniprogram/pages/courseDetail/courseDetail.wxml-->
 <view class="container">
     <view class="course-info">
-        <view class="course-title">课程主标题</view>
+        <view class="course-title">{{coursePublicData.course_title}}</view>
         <view class="course-date">
-            2020/2/21-2020/4/30
+            {{coursePublicData.course_date}}
         </view>
         <view class="course-lecturer">
             <image class="lecturer-avatar"></image>
             <view class="lecturer-info">
-                <view>王先生</view>
+                <view>{{coursePublicData.course_lecturer[0]}}</view>
                 <view class="light">主讲老师</view>
             </view>
             <image class="lecturer-avatar"></image>
             <view class="lecturer-info">
-                <view>刘先生</view>
-                <view class="light">主讲老师</view>
+                <view>{{coursePublicData.course_lecturer[1]}}</view>
+                <view class="light">辅导老师</view>
             </view>
         </view>
     </view>
@@ -22,41 +22,14 @@
         <view class="section">
             <view class="section-title">课程安排</view>
             <view class="section-content">
-                <view class="course-section">
-                    <view class="course-title">课程标题</view>
+                <view class="course-section" wx:for="{{coursePublicData.course_section.length}}" wx:key="unique">
+                    <view class="course-title">{{coursePublicData.course_section[index].subtitle}}</view>
                     <view class="section-middle">
                         <view class="middle-left">
-                            <view class="course-date">2020/2/21</view>
+                            <view class="course-date">{{coursePublicData.course_section[index].date}}</view>
                             <view class="course-icon"></view>
                         </view>
                         <view class="course-startButton" bindtap="toCourseLearn">去学习</view>
-                    </view>
-                    <view class="course-state">
-                        <view class="state-button">学习已完成</view>
-                        <view class="state-button">作业已提交</view>
-                    </view>
-                </view>
-                <view class="course-section">
-                    <view class="course-title">课程标题</view>
-                    <view class="section-middle">
-                        <view class="middle-left">
-                            <view class="course-date">2020/2/21</view>
-                        </view>
-                        <view class="course-startButton" bindtap="toCourseLearn">去学习</view>
-                    </view>
-                    <view class="course-state">
-                        <view class="state-button">学习已完成</view>
-                        <view class="state-button">作业已提交</view>
-                    </view>
-                </view>
-                <view class="course-section disable">
-                    <view class="course-title">课程标题</view>
-                    <view class="section-middle">
-                        <view class="middle-left">
-                            <view class="course-date">2020/2/21</view>
-                            <view class="course-icon"></view>
-                        </view>
-                        <view class="course-startButton" bindtap="learnDisable">去学习</view>
                     </view>
                     <view class="course-state">
                         <view class="state-button">学习已完成</view>
@@ -66,9 +39,9 @@
             </view>
         </view>
     </view>
-    <view class="footer signUpButton">
-        <button size="mini">联系班主任</button>
-    </view>
+<!--    <view class="footer signUpButton">-->
+<!--        <button size="mini">联系班主任</button>-->
+<!--    </view>-->
 </view>
 <showModel wx:if="{{disableShowModelState}}"
            showModelData="{{disableShowModelData}}"

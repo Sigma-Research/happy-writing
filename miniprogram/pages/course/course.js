@@ -44,12 +44,14 @@ Page({
     })
   },
   // 跳转课程详情页
-  toCourseDetail: (index) => {
+  toCourseDetail: function(e) {
+    const that = this
     wx.navigateTo({
       url: '../courseDetail/courseDetail',
-      success: (res) => {
+      success(res) {
+        console.log(that.data.registeredCourse[e.currentTarget.dataset.index])
         res.eventChannel.emit('getCourseData', {
-          data: this.data.registeredCourse[index]
+          data: that.data.registeredCourse[e.currentTarget.dataset.index]
         })
       }
     })

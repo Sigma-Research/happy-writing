@@ -9,41 +9,29 @@ Page({
     coursePublicData: null,
     coursePrivateData: null,
   },
-  onLoad: function (options) {
+  onShow: async function (options) {
     const eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('getCourseData', (res) => {
+    await eventChannel.on('getCourseData', async (res) => {
       const coursePublicData = res.data
-      db.collection('t_user').where({
-        _openid: app.globalData.openid
+      console.log(res)
+      const coursePrivateData = app.globalData.userData.course[coursePublicData._id]
+      await db.collection('t_lecturer').where({
+        _id: coursePublicData.course_lecturer[0]
       }).get().then(res => {
-        const coursePrivateData = res.data[0].course[coursePublicData._id]
-        this.setData({
-          coursePublicData,
-          coursePrivateData
-        })
+        coursePublicData.course_lecturer[0] = res.data[0].lecturer_name
       })
+      await db.collection('t_lecturer').where({
+        _id: coursePublicData.course_lecturer[1]
+      }).get().then(res => {
+        coursePublicData.course_lecturer[1] = res.data[0].lecturer_name
+      })
+      this.setData({
+        coursePublicData,
+        coursePrivateData
+      })
+      console.log('获取课程公共数据', this.data.coursePublicData)
+      console.log('获取课程个人数据', this.data.coursePrivateData)
     })
-  },
-  onReady: function () {
-
-  },
-  onShow: function () {
-
-  },
-  onHide: function () {
-
-  },
-  onUnload: function () {
-
-  },
-  onPullDownRefresh: function () {
-
-  },
-  onReachBottom: function () {
-
-  },
-  onShareAppMessage: function () {
-
   },
   toCourseLearn: (index) => {
     wx.navigateTo({
