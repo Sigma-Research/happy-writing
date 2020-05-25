@@ -8,7 +8,7 @@ Page({
     unregisteredCourse: [],
     userCourse: []
   },
-  onLoad: async function (options) {
+  onShow: async function (options) {
     if (!app.globalData.userData) {
       console.log('全局中未存储用户信息')
       await app.getUserData()

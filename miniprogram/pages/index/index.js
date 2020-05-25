@@ -4,11 +4,7 @@ const db = wx.cloud.database()
 
 Page({
   data: {
-    userInfo: {},
-    logged: false,
-    takeSession: false,
-    requestResult: '',
-    homeworkListIndex: 0,
+    homeworkListCount: 0,
     homeworkList: [],
     recommendCourse: null,
   },
@@ -17,14 +13,15 @@ Page({
     this.getRecommendCourse()
     this.getHomeworkList()
   },
-  //插入用户表
-  insertUser: function () {
-    //判断用户是否已存在
+  // 插入用户表
+  insertUser: async function () {
+    // 判断用户是否已存在
     db.collection('t_user').where({
       _openid: app.globalData.openid
     }).count().then(async res => {
       if (!res.total) {
         console.log('用户不存在')
+        // 不存在创建用户信息
         await db.collection('t_user').add({
           data: {
             create_date: new Date().toLocaleDateString(),
@@ -35,7 +32,8 @@ Page({
           }
         })
       } else console.log('用户存在')
-      app.getUserData()
+      // 用户信息存入全局
+      await app.getUserData()
     })
   },
   // 调用云函数获取用户 openID
@@ -57,11 +55,11 @@ Page({
   getHomeworkList: function () {
     db.collection('t_homework')
         .limit(10)
-        .skip(this.data.homeworkListIndex)
+        .skip(this.data.homeworkListCount)
         .get()
         .then(res => {
           this.setData({
-            homeworkListIndex: this.data.homeworkListIndex + 10,
+            homeworkListCount: this.data.homeworkListCount + 10,
             homeworkList: [...this.data.homeworkList, ...res.data]
           })
           console.log('获取作业广场数据: ',this.data.homeworkList)
@@ -82,6 +80,7 @@ Page({
   onReachBottom: function () {
     this.getHomeworkList()
   },
+  // 跳转课程海报页
   toCoursePoster: function() {
     wx.navigateTo({
       url: '../coursePoster/coursePoster',
@@ -92,6 +91,7 @@ Page({
       }
     })
   },
+  // 跳转课程详情页g
   toHomeworkDetail: () => {
     wx.navigateTo({
       url: '../homeworkDetail/homeworkDetail'
