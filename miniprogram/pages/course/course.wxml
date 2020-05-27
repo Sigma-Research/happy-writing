@@ -1,34 +1,34 @@
 <!--miniprogram/pages/course/course.wxml-->
 <view class="container">
-    <view class="noCourse" wx:if="{{!registeredCourse.length}}">暂无报名任何课程，挑选以下课程进行报名</view>
+    <view class="noCourse" wx:if="{{!learningCourseData.length}}">暂无报名任何课程，挑选以下课程进行报名</view>
     <view class="section enrolled" wx:else>
         <view class="section-title">进行中</view>
         <view class="section-subtitle">已报名正在学习课程</view>
         <view class="section-content">
-            <view class="course" wx:for="{{registeredCourse.length}}" wx:key="unique">
+            <view class="course" wx:for="{{learningCourseData.length}}" wx:key="unique">
                 <image class="course-image"></image>
                 <view class="course-info">
-                    <view class="course-title">{{registeredCourse[index].course_title}}</view>
-                    <view class="course-date">{{registeredCourse[index].course_date}}</view>
+                    <view class="course-title">{{learningCourseData[index].course_title}}</view>
+                    <view class="course-date">{{learningCourseData[index].course_date}}</view>
                     <view class="course-progress">5 节课待完成</view>
                     <view data-index="{{index}}" class="startButton" bindtap="toCourseDetail">去学习</view>
                 </view>
             </view>
-            <view style="text-align: center;margin-top: 40rpx">已完结课程</view>
+            <view style="text-align: center;margin-top: 40rpx" bindtap="toCourseExpiredList">已完结课程</view>
         </view>
     </view>
     <view class="section unregistered">
-        <view class="section-title" wx:if="{{registeredCourse.length}}">未报名</view>
-        <view class="section-subtitle" wx:if="{{registeredCourse.length}}">选择下方课程进行报名</view>
+        <view class="section-title" wx:if="{{learningCourseData.length}}">未报名</view>
+        <view class="section-subtitle" wx:if="{{learningCourseData.length}}">选择下方课程进行报名</view>
         <view class="section-content">
-            <view class="course" wx:for="{{unregisteredCourse.length}}" wx:key="unique">
+            <view class="course" wx:for="{{unregisteredCourseData.length}}" wx:key="unique">
                 <image class="course-image"></image>
                 <view class="course-info">
-                    <view class="course-title">{{unregisteredCourse[index].course_title}}</view>
-                    <view class="course-subtitle">{{unregisteredCourse[index].course_subtitle}}</view>
+                    <view class="course-title">{{unregisteredCourseData[index].course_title}}</view>
+                    <view class="course-subtitle">{{unregisteredCourseData[index].course_subtitle}}</view>
                     <view class="course-price">
-                        ￥{{unregisteredCourse[index].course_price}}
-                        <view class="previous">￥{{unregisteredCourse[index].course_previous_price}}</view>
+                        ￥{{unregisteredCourseData[index].course_price}}
+                        <view class="previous">￥{{unregisteredCourseData[index].course_previous_price}}</view>
                     </view>
                 </view>
                 <view class="course-button" data-index="{{index}}" bindtap="toCoursePoster">去报名</view>

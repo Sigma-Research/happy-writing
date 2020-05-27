@@ -4,67 +4,105 @@ const db = wx.cloud.database()
 
 Page({
   data: {
-    registeredCourse: [],   // 已报名课程数组列表
-    unregisteredCourse: [], // 未报名课程数组列表
-    userCourse: []          // 用户已报名课程的 ID 数组
+    allCourseData: null,
+    userCourseData: null,
+    learningCourseData: [],
+    unregisteredCourseData: [], // 未报名课程数组列表
+    expiredCourseData: [],  //
   },
-  // 显示页面时判断是否已存储用户信息，然后获取课程
+  //
   onShow: async function (options) {
-    if (!app.globalData.userData) {
-      console.log('全局中未存储用户信息')
-      await app.getUserData()
-    }
-    this.getCourse()
+    if (!app.globalData.userData){
+      app.eventHub.on('userDataInitSuccess', this.init)
+    } else this.init()
+  },
+  init: async function () {
+    await this.getAllCourseData()
+    this.getUserCourseData()
+    this.refactorAllCourseData()
   },
   onReady: function () {
   },
-  // 获取用户已报名课程的 ID 数组
-  getUserCourse: function () {
-    const userCourse = Object.keys(app.globalData.userData.course)
-    console.log('获取用户已报名课程ID数组', userCourse)
-    this.setData({
-      userCourse
-    })
-  },
-  // 获取课程并根据是否报名分类
-  getCourse: function () {
-    this.getUserCourse()
-    db.collection('t_course').get().then(res => {
-      const registeredCourse = []
-      const unregisteredCourse = []
-      res.data.map(course => {
-        if (this.data.userCourse.includes(course._id)) registeredCourse.push(course)
-        else unregisteredCourse.push(course)
-      })
+  getAllCourseData: async function () {
+    await db.collection('t_course').get().then(res => {
+      const allCourseData = res.data
       this.setData({
-        registeredCourse,
-        unregisteredCourse
+        allCourseData
       })
-      console.log('得到 registeredCourse 列表', registeredCourse)
-      console.log('得到 unregisteredCourse 列表', unregisteredCourse)
+      console.log('查询所有课程数据并存入allCourseData',this.data.allCourseData)
     })
   },
+  getUserCourseData: function () {
+    const userCourseData = app.globalData.userData.course
+    this.setData({
+      userCourseData
+    })
+    console.log('userCourseData',this.data.userCourseData)
+  },
+  DateMinus: function (createDate) {
+    const date = new Date()
+    return parseInt((date.getTime() - createDate.getTime()) / (1000 * 60 * 60 * 24))
+  },
+  refactorAllCourseData: function () {
+    const unregisteredCourseData = []
+    let learningCourseData = []
+    const expiredCourseData = []
+    this.data.allCourseData.map((course)=>{
+      if (!this.data.userCourseData.hasOwnProperty(course._id)) unregisteredCourseData.push(course)
+      else {
+        if (this.DateMinus(this.userCourseData[course._id].create_date) >= course.course_duration )
+          expiredCourseData.push(course)
+        else learningCourseData.push(course)
+      }
+    })
+    learningCourseData = learningCourseData.map(course => {
+      return course.course_section.map((section, index) => {
+        return Object.assign(section, this.data.userCourseData[course._id].course_section[index])
+      })
+    })
+    this.setData({
+      unregisteredCourseData,
+      learningCourseData,
+      expiredCourseData
+    })
+    console.log('重构unregisteredCourseData',unregisteredCourseData)
+    console.log('重构learningCourseData',learningCourseData)
+    console.log('重构expiredCourseData',expiredCourseData)
+  },
+
   // 跳转课程详情页
   toCourseDetail: function(e) {
-    const that = this
+    const learningCourseData = this.data.learningCourseData[e.currentTarget.dataset.index]
     wx.navigateTo({
       url: '../courseDetail/courseDetail',
       success(res) {
-        console.log(that.data.registeredCourse[e.currentTarget.dataset.index])
-        res.eventChannel.emit('getCourseData', {
-          data: that.data.registeredCourse[e.currentTarget.dataset.index]
+        console.log('向课程详情页面传递课程数据',learningCourseData)
+        res.eventChannel.emit('getLearningCourseData', {
+          learningCourseData
         })
       }
     })
   },
   // 跳转课程海报页
   toCoursePoster: function (e) {
-    const that = this
+    const courseId = this.data.unregisteredCourseData[e.currentTarget.dataset.index]._id
     wx.navigateTo({
       url: '../coursePoster/coursePoster',
       success(res) {
-        res.eventChannel.emit('getCourseData', {
-          data: that.data.unregisteredCourse[e.currentTarget.dataset.index]
+        res.eventChannel.emit('getCourseId', {
+          courseId
+        })
+      }
+    })
+  },
+  // 跳转已完结课程页
+  toCourseExpiredList: function () {
+    const expiredCourseData = this.data.expiredCourseData
+    wx.navigateTo({
+      url: '../courseExpiredList/courseExpiredList',
+      success(res) {
+        res.eventChannel.emit('getExpiredCourseData', {
+          expiredCourseData
         })
       }
     })
