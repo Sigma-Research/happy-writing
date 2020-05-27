@@ -2,28 +2,28 @@
 <view class="container">
     <view class="course">
         <view class="infoCard">
-            <view class="title">课程主标题</view>
-            <view class="date">有效期： 2020-02-21 ~ 2020-02-24</view>
-            <view class="statistics">课程时间：1小时12分钟  视频数：2个</view>
+            <view class="title">{{courseSectionPublicData.subtitle}}</view>
+            <view class="date">有效期： {{date}}</view>
+            <view class="statistics">课程时间：{{courseSectionPublicData.duration}}分钟  视频数：{{courseSectionPublicData.video.length}}个</view>
             <view class="lecturerWrapper">
                 <view class="lecturer">
                     <image class="avatar"></image>
                     <view class="name">
-                        <view class="highlight">王老师</view>
+                        <view class="highlight">{{lecturer[0]}}</view>
                         主讲老师
                     </view>
                 </view>
                 <view class="lecturer">
                     <image class="avatar"></image>
                     <view class="name">
-                        <view class="highlight">刘老师</view>
+                        <view class="highlight">{{lecturer[1]}}</view>
                         辅导老师
                     </view>
                 </view>
             </view>
         </view>
         <view class="course-section">
-            <view class="title">课程内容<view class="subtitle">已完成 12/30</view></view>
+            <view class="title">课程内容<view class="subtitle">已完成 {{video_schedule}}/{{courseSectionPublicData.video.length}}</view></view>
             <scroll-view scroll-x class="videoWrapper">
                 <view class="video" bindtap="createVideo">
                     <video class="image"
@@ -41,103 +41,15 @@
                     <view class="video-title">视频标题</view>
                     <view class="duration">视频时长：14分钟</view>
                 </view>
-                <view class="video">
-                    <image class="image"></image>
-                    <view class="video-title">视频标题</view>
-                    <view class="duration">视频时长：14分钟</view>
-                </view>
-                <view class="video">
-                    <image class="image"></image>
-                    <view class="video-title">视频标题</view>
-                    <view class="duration">视频时长：14分钟</view>
-                </view>
-                <view class="video">
-                    <image class="image"></image>
-                    <view class="video-title">视频标题</view>
-                    <view class="duration">视频时长：14分钟</view>
-                </view>
             </scroll-view>
         </view>
         <view class="course-section">
             <view class="title">课程内容</view>
-            <view class="subtitle">已完成 12/30</view>
-            作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容作业内容
+            {{courseSectionPublicData.homework}}
         </view>
         <button size="mini"
                 class="table-button"
                 bindtap="toHomeworkDetail"
         >开始学习</button>
     </view>
-<!--    <view class="section display">-->
-<!--        <view class="section-title">书写展示</view>-->
-<!--        <view class="section-subtitle .hint">点击查看写字顺序笔法</view>-->
-<!--        <scroll-view scroll-x class="section-content">-->
-<!--            <view class="hanzi">-->
-<!--                <hanzi-writer-view id="hz-writer1" width="100" height="100" />-->
-<!--            </view>-->
-<!--            <view class="hanzi">-->
-<!--                <hanzi-writer-view id="hz-writer2" width="100" height="100" />-->
-<!--            </view>-->
-<!--            <view class="hanzi">-->
-<!--                <hanzi-writer-view id="hz-writer3" width="100" height="100" />-->
-<!--            </view>-->
-<!--            <view class="hanzi">-->
-<!--                <hanzi-writer-view id="hz-writer4" width="100" height="100" />-->
-<!--            </view>-->
-<!--            <view class="hanzi">-->
-<!--                <hanzi-writer-view id="hz-writer5" width="100" height="100" />-->
-<!--            </view>-->
-<!--            <view class="hanzi">-->
-<!--                <hanzi-writer-view id="hz-writer6" width="100" height="100" />-->
-<!--            </view>-->
-<!--        </scroll-view>-->
-<!--    </view>-->
-<!--    <view class="section exercise">-->
-<!--        <view class="section-title">作业练习</view>-->
-<!--        <view class="section-subtitle .hint">作业描述</view>-->
-<!--        <view class="section-content">-->
-<!--        </view>-->
-<!--    </view>-->
-<!--    <view class="section communication">-->
-<!--        <view class="section-title">作业交流</view>-->
-<!--        <scroll-view scroll-x class="content">-->
-<!--            <view class="work">-->
-<!--                <image class="image"></image>-->
-<!--                <view class="info">-->
-<!--                    <view class="name">曾家平</view>-->
-<!--                    <view class="icon">-->
-<!--                        <image class="heart"></image>-->
-<!--                        238-->
-<!--                    </view>-->
-<!--                    <view class="date">作业时间：2020-02-25</view>-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="work">-->
-<!--                <image class="image"></image>-->
-<!--                <view class="info">-->
-<!--                    <view class="name">曾家平</view>-->
-<!--                    <view class="icon">-->
-<!--                        <image class="heart"></image>-->
-<!--                        238-->
-<!--                    </view>-->
-<!--                    <view class="date">作业时间：2020-02-25</view>-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="work">-->
-<!--                <image class="image"></image>-->
-<!--                <view class="info">-->
-<!--                    <view class="name">崔文豪</view>-->
-<!--                    <view class="icon">-->
-<!--                        <image class="heart"></image>-->
-<!--                        238-->
-<!--                    </view>-->
-<!--                    <view class="date">作业时间：2020-02-25</view>-->
-<!--                </view>-->
-<!--            </view>-->
-<!--        </scroll-view>-->
-<!--    </view>-->
-<!--    <view class="buttonGroup">-->
-<!--        <view class="button">上一节</view>-->
-<!--        <view class="button">下一节</view>-->
-<!--    </view>-->
 </view>

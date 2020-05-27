@@ -33,14 +33,22 @@ Page({
       console.log('获取课程个人数据', this.data.coursePrivateData)
     })
   },
-  toCourseLearn: (index) => {
+  toCourseLearn: function (e) {
+    // const index = e.currentTarget.dataset.index
+    // const coursePublicData = this.data.coursePublicData
+    // const coursePrivateData = this.data.coursePrivateData
+    // const lecturer = coursePublicData.course_lecturer
+    // const courseSectionPublicData = coursePublicData.course_section[index]
+    // const video_schedule = coursePrivateData.video_schedule[index]
+    // const date = coursePrivateData.course_date
     wx.navigateTo({
       url: '../courseLearn/courseLearn',
       success: (res) => {
         res.eventChannel.emit('getCourseData', {
-          coursePrivateData: this.data.coursePrivateData,
-          coursePublicData: this.data.coursePublicData,
-          index
+          // courseSectionPublicData,
+          // video_schedule,
+          // lecturer,
+          // date
         })
       }
     })

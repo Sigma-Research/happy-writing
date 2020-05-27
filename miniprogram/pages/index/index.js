@@ -8,10 +8,12 @@ Page({
     homeworkList: [],
     recommendCourse: null,
   },
-  onLoad: function () {
-    this.onGetOpenid(this.insertUser)
-    this.getRecommendCourse()
-    this.getHomeworkList()
+  onLoad: async function () {
+    // this.getRecommendCourse()
+    // this.getHomeworkList()
+  },
+
+  onShow: function () {
   },
   // 插入用户表
   insertUser: async function () {
@@ -34,21 +36,6 @@ Page({
       } else console.log('用户存在')
       // 用户信息存入全局
       await app.getUserData()
-    })
-  },
-  // 调用云函数获取用户 openID
-  onGetOpenid: (callback) => {
-    wx.cloud.callFunction({
-      name: 'login',
-      data: {},
-      success: res => {
-        console.log('[云函数] [login] 调用成功 openID: ', res.result.openid)
-        app.globalData.openid = res.result.openid
-        callback()
-      },
-      fail: err => {
-        console.error('[云函数] [login] 调用失败', err)
-      }
     })
   },
   // 获取作业广场数据

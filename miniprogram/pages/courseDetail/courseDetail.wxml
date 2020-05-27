@@ -29,7 +29,7 @@
                             <view class="course-date">{{coursePublicData.course_section[index].date}}</view>
                             <view class="course-icon"></view>
                         </view>
-                        <view class="course-startButton" bindtap="toCourseLearn">去学习</view>
+                        <view class="course-startButton" data-index="{{index}}" bindtap="toCourseLearn">去学习</view>
                     </view>
                     <view class="course-state">
                         <view class="state-button">学习已完成</view>

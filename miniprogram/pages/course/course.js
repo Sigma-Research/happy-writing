@@ -8,6 +8,7 @@ Page({
     unregisteredCourse: [], // 未报名课程数组列表
     userCourse: []          // 用户已报名课程的 ID 数组
   },
+  // 显示页面时判断是否已存储用户信息，然后获取课程
   onShow: async function (options) {
     if (!app.globalData.userData) {
       console.log('全局中未存储用户信息')

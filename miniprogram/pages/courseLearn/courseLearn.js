@@ -3,42 +3,22 @@
 Page({
   data: {
     videoFullscreenState: false,
-    coursePublicData: null,
-    coursePrivateData: null,
-    index: null
+    courseSectionPublicData: null,
+    video_schedule: null,
+    lecturer: []
   },
-  onLoad: function (options) {
+  onShow: async function (options) {
     const eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('getCourseData', (res) => {
-      const [coursePublicData, coursePrivateData, index] = res.data
+    await eventChannel.on('getCourseData', async (res) => {
+      const {courseSectionPublicData, video_schedule, lecturer, date} = res
+      console.log('获取课程详情页面传来的数据',res)
       this.setData({
-        coursePublicData,
-        coursePrivateData,
-        index
+        courseSectionPublicData,
+        video_schedule,
+        lecturer,
+        date
       })
     })
-    // this.writerCtx1 = createHanziWriterContext({
-    //   id: 'hz-writer1',
-    //   character: '你',
-    //   page: this,
-    //   renderer: 'canvas'
-    // });
-  },
-  onReady: function () {
-  },
-  onShow: function () {
-    // You can call any normal HanziWriter method here
-    // this.writerCtx1.loopCharacterAnimation();
-  },
-  onHide: function () {
-  },
-  onUnload: function () {
-  },
-  onPullDownRefresh: function () {
-  },
-  onReachBottom: function () {
-  },
-  onShareAppMessage: function () {
   },
   toHomeworkDetail: () => {
     wx.navigateTo({
