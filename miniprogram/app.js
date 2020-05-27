@@ -1,7 +1,7 @@
 //app.js
 let db
 App({
-  onLaunch: async function () {
+  onLaunch: function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -10,10 +10,36 @@ App({
       })
       db = wx.cloud.database()
     }
+    this.init()
+    this.initUser().then(r => this.eventHub.emit('userDataInitSuccess'))
+  },
+  //
+  init: function () {
     this.globalData = {}
+    this.eventHub = {
+      events:{
+      },
+      emit(eventName,data){
+        for (let key in this.events){
+          if (key === eventName){
+            let fnList = this.events[key];
+            fnList.map((fn)=>{
+              fn.call(undefined,data)
+            })
+          }
+        }
+      },
+      on(eventName,fn){
+        if (this.events[eventName] === undefined)
+          this.events[eventName] = []
+        this.events[eventName].push(fn)
+      },
+    }
+  },
+  //
+  initUser: async function () {
     await this.getOpenid()
     const res = await this.getUserData(this.globalData.openid)
-    console.log(res)
     if (res.length) {
       console.log('用户存在')
       this.setUserData(res[0])
@@ -23,7 +49,7 @@ App({
       this.createUser(this.initUserData())
     }
   },
-  // 创建用户
+   // 创建用户
   createUser: function (userData) {
     db.collection('t_user').add({
       data: userData

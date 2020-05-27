@@ -8,35 +8,15 @@ Page({
     homeworkList: [],
     recommendCourse: null,
   },
-  onLoad: async function () {
-    // this.getRecommendCourse()
-    // this.getHomeworkList()
-  },
-
   onShow: function () {
+    if (!app.globalData.userData){
+      app.eventHub.on('userDataInitSuccess', this.init)
+    } else{
+      this.init()
+    }
   },
-  // 插入用户表
-  insertUser: async function () {
-    // 判断用户是否已存在
-    db.collection('t_user').where({
-      _openid: app.globalData.openid
-    }).count().then(async res => {
-      if (!res.total) {
-        console.log('用户不存在')
-        // 不存在创建用户信息
-        await db.collection('t_user').add({
-          data: {
-            create_date: new Date().toLocaleDateString(),
-            course: {},
-            tel: null,
-            nickname: null,
-            info: {}
-          }
-        })
-      } else console.log('用户存在')
-      // 用户信息存入全局
-      await app.getUserData()
-    })
+  init: function () {
+    console.log(this.data)
   },
   // 获取作业广场数据
   getHomeworkList: function () {
