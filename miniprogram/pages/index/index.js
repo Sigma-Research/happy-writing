@@ -38,7 +38,7 @@ Page({
       recommend: true
     }).get().then(res => {
       this.setData({
-        recommendCourse: res.data[0]._id
+        recommendCourse: res.data[0][_id]
       })
       console.log('获取推荐课程数据: ',this.data.recommendCourse)
     })
