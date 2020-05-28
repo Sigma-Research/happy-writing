@@ -11,7 +11,7 @@ Page({
     expiredCourseData: [],  //
   },
   //
-  onShow: async function (options) {
+  onShow: function (options) {
     if (!app.globalData.userData){
       app.eventHub.on('userDataInitSuccess', this.init)
     } else this.init()
@@ -50,14 +50,16 @@ Page({
     this.data.allCourseData.map((course)=>{
       if (!this.data.userCourseData.hasOwnProperty(course._id)) unregisteredCourseData.push(course)
       else {
-        if (this.DateMinus(this.userCourseData[course._id].create_date) >= course.course_duration )
+        if (this.DateMinus(this.data.userCourseData[course._id].create_date) >= course.course_duration )
           expiredCourseData.push(course)
         else learningCourseData.push(course)
       }
     })
     learningCourseData = learningCourseData.map(course => {
-      return course.course_section.map((section, index) => {
-        return Object.assign(section, this.data.userCourseData[course._id].course_section[index])
+      return Object.assign(course, {
+          course_section: course.course_section.map((section, index) => {
+            return Object.assign(section, this.data.userCourseData[course._id].course_section[index])
+          })
       })
     })
     this.setData({
@@ -76,7 +78,7 @@ Page({
     wx.navigateTo({
       url: '../courseDetail/courseDetail',
       success(res) {
-        console.log('向课程详情页面传递课程数据',learningCourseData)
+        console.log('向课程详情页面传递课程数据', learningCourseData)
         res.eventChannel.emit('getLearningCourseData', {
           learningCourseData
         })
@@ -89,6 +91,7 @@ Page({
     wx.navigateTo({
       url: '../coursePoster/coursePoster',
       success(res) {
+        console.log('向课程海报页面传递课程ID', courseId)
         res.eventChannel.emit('getCourseId', {
           courseId
         })
@@ -101,6 +104,7 @@ Page({
     wx.navigateTo({
       url: '../courseExpiredList/courseExpiredList',
       success(res) {
+        console.log('向课程过期页面传递过期课程数据', expiredCourseData)
         res.eventChannel.emit('getExpiredCourseData', {
           expiredCourseData
         })

@@ -5,14 +5,15 @@
         <view class="hint">
             限时免费领取 <view class="highlight">777</view> 元 【精品课】 剩余 <view class="highlight">12:59:59</view>
         </view>
-        <button wx:if="{{registerState}}"
+        <button wx:if="{{courseState}}"
                 size="mini"
                 class="table-button"
-                bindtap="xxxx"
+                bindtap="toCourseDetail"
         >已报名 点击进入课程</button>
         <button wx:else
-                open-type="getPhoneNumber"
-                bindgetphonenumber="getPhoneNumber"
+                open-type="{{userTel ? null : 'getPhoneNumber' }}"
+                bindgetphonenumber="getPhoneNumberByOpenType"
+                bindtap="showForm"
                 size="mini"
                 class="table-button"
                 >立即报名</button>
@@ -22,15 +23,24 @@
 <showModel wx:if="{{formShowModelState}}"
            showModelData="{{formShowModelData}}"
            bindconfirm="registerCourse"
-           bindhidden="toTips">
+           bindhidden="showTips">
     <view class="table">
-        <input type="number" value="{{cellphoneValue}}" placeholder-style="color: #999896;font-weight: normal" placeholder="请输入手机号码" class="cellphone-number" bindinput="inputCellphoneNumber"></input>
+        <input type="number" value="{{userTel}}"
+               placeholder-style="color: #999896;font-weight: normal"
+               placeholder="请输入手机号码" class="cellphone-number"
+               bindinput="inputCellphoneNumber">
+        </input>
         <image bindtap="clearCellphoneNumber"></image>
     </view>
     <view class="table addMargin">
-        <input type="number" placeholder-style="color: #999896; font-weight: normal" placeholder="{{verificationCodePlaceholder}}"></input>
-        <view class="{{getCodeButtonState ? 'getCodeButton' : 'getCodeButton disable'}}" bindtap="getVerificationCode">
-            {{verificationButtonValue}}</view>
+        <input type="number"
+               placeholder-style="color: #999896; font-weight: normal"
+               placeholder="{{userTelState ? '请输入验证码' : getCodeState ? '请输入正确的手机号' : '请先获取验证码'}}">
+        </input>
+        <view class="{{userTelState && getCodeState ? 'getCodeButton' : 'getCodeButton disable'}}"
+              bindtap="getVerificationCode">
+            {{getCodeButtonValue}}
+        </view>
     </view>
 </showModel>
 

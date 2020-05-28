@@ -16,7 +16,7 @@ Page({
     }
   },
   init: function () {
-    console.log(this.data)
+    this.getRecommendCourse()
   },
   // 获取作业广场数据
   getHomeworkList: function () {
@@ -38,7 +38,7 @@ Page({
       recommend: true
     }).get().then(res => {
       this.setData({
-        recommendCourse: res.data[0]
+        recommendCourse: res.data[0]._id
       })
       console.log('获取推荐课程数据: ',this.data.recommendCourse)
     })
@@ -48,12 +48,14 @@ Page({
     this.getHomeworkList()
   },
   // 跳转课程海报页
-  toCoursePoster: function() {
+  toCoursePoster: function (e) {
+    const courseId = this.data.recommendCourse
     wx.navigateTo({
       url: '../coursePoster/coursePoster',
-      success: (res) => {
-        res.eventChannel.emit('getCourseData', {
-          data: this.data.recommendCourse
+      success(res) {
+        console.log('向课程海报页面传递课程ID', courseId)
+        res.eventChannel.emit('getCourseId', {
+          courseId
         })
       }
     })

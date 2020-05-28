@@ -58,10 +58,10 @@ App({
   // 用户信息初始化
   initUserData: function () {
     return {
-      create_date: new Date().toLocaleDateString(),
+      create_date: new Date(),
       course: {},
-      tel: null,
-      nickname: null,
+      tel: '',
+      nickname: '',
       info: {}
     }
   },
@@ -97,4 +97,18 @@ App({
       console.error('[云函数] [login] 调用失败', err)
     } )
   },
+  setUserTel: function (tel) {
+    console.log(`设置用户tel为${tel}`)
+    this.globalData.userData.tel = tel
+  },
+  setUserCourse: function (course) {
+    console.log(`设置用户Course为`, course)
+    this.globalData.userData.course = course
+  },
+  updateUserData: async function () {
+    let {create_date, course, tel, nickname, info} = this.globalData.userData
+    await db.collection('t_user').doc(this.globalData.userData._id).update({
+        data: {create_date, course, tel, nickname, info}
+    }).then( res => console.log('更新用户数据成功'), error => console.log('更新用户数据成功', error) )
+  }
 })
