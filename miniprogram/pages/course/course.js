@@ -56,10 +56,13 @@ Page({
       }
     })
     learningCourseData = learningCourseData.map(course => {
+      let {course_schedule,create_date} = this.data.userCourseData[course._id]
       return Object.assign(course, {
-          course_section: course.course_section.map((section, index) => {
-            return Object.assign(section, this.data.userCourseData[course._id].course_section[index])
-          })
+        course_section: course.course_section.map((section, index) => {
+          return Object.assign(section, this.data.userCourseData[course._id].course_section[index])
+        }),
+        course_schedule,
+        create_date
       })
     })
     this.setData({
@@ -74,13 +77,13 @@ Page({
 
   // 跳转课程详情页
   toCourseDetail: function(e) {
-    const learningCourseData = this.data.learningCourseData[e.currentTarget.dataset.index]
+    const courseData = this.data.learningCourseData[e.currentTarget.dataset.index]
     wx.navigateTo({
       url: '../courseDetail/courseDetail',
       success(res) {
-        console.log('向课程详情页面传递课程数据', learningCourseData)
-        res.eventChannel.emit('getLearningCourseData', {
-          learningCourseData
+        console.log('向课程详情页面传递课程数据', courseData)
+        res.eventChannel.emit('getCourseData', {
+          courseData
         })
       }
     })

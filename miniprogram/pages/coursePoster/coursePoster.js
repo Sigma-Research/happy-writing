@@ -38,11 +38,12 @@ Page({
   },
   // 获取课程 Id
   getCourseId: function (e) {
+    const courseId = e.courseId
     console.log('获取页面通信数据')
     this.setData({
-      courseId: e.courseId
+      courseId
     })
-    console.log(`设置课程海报页面课程id为${e.courseId}`)
+    console.log(`设置课程海报页面课程id为${courseId}`)
   },
   // 获取课程数据
   getCourseData: async function () {

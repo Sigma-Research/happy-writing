@@ -6,32 +6,23 @@ Page({
   data: {
     disableShowModelState: false,
     disableShowModelData: null,
-    coursePublicData: null,
-    coursePrivateData: null,
+    courseData: null
   },
   onShow: async function (options) {
+    await this.onCommunication()
+    console.log(this.data.courseData)
+  },
+  onCommunication: async function () {
     const eventChannel = this.getOpenerEventChannel()
-    await eventChannel.on('getCourseData', async (res) => {
-      const coursePublicData = res.data
-      console.log(res)
-      const coursePrivateData = app.globalData.userData.course[coursePublicData._id]
-      await db.collection('t_lecturer').where({
-        _id: coursePublicData.course_lecturer[0]
-      }).get().then(res => {
-        coursePublicData.course_lecturer[0] = res.data[0].lecturer_name
-      })
-      await db.collection('t_lecturer').where({
-        _id: coursePublicData.course_lecturer[1]
-      }).get().then(res => {
-        coursePublicData.course_lecturer[1] = res.data[0].lecturer_name
-      })
-      this.setData({
-        coursePublicData,
-        coursePrivateData
-      })
-      console.log('获取课程公共数据', this.data.coursePublicData)
-      console.log('获取课程个人数据', this.data.coursePrivateData)
+    await eventChannel.on('getCourseData', this.getCourseData)
+  },
+  getCourseData: function (e) {
+    const courseData = e.courseId
+    console.log('获取页面通信数据')
+    this.setData({
+      courseData
     })
+    console.log(`设置课程课程数据为`, courseData)
   },
   toCourseLearn: function (e) {
     // const index = e.currentTarget.dataset.index
