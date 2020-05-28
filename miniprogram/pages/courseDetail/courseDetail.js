@@ -17,7 +17,7 @@ Page({
     await eventChannel.on('getCourseData', this.getCourseData)
   },
   getCourseData: function (e) {
-    const courseData = e.courseId
+    const courseData = e.courseData
     console.log('获取页面通信数据')
     this.setData({
       courseData

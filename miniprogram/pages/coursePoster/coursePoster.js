@@ -211,10 +211,13 @@ Page({
   //
   toCourseDetail: function () {
     const courseData = this.data.courseData
+    let {course_schedule,create_date} = app.globalData.userData.course[courseData._id]
     Object.assign(courseData, {
       course_section: courseData.course_section.map((section, index) => {
-        return Object.assign(section, app.globalData.userData.course[courseData._id].course_section[index])
-      })
+        return Object.assign(section, courseData.course_section[index])
+      }),
+      course_schedule,
+      create_date
     })
     wx.navigateTo({
       url: '../courseDetail/courseDetail',
