@@ -101,9 +101,9 @@ App({
     console.log(`设置用户tel为${tel}`)
     this.globalData.userData.tel = tel
   },
-  setUserCourse: function (course) {
-    console.log(`设置用户Course为`, course)
-    this.globalData.userData.course = course
+  addUserCourse: function (course) {
+    console.log(`报名Course`, course)
+    Object.assign(this.globalData.userData.course, course)
   },
   updateUserData: async function () {
     let {create_date, course, tel, nickname, info} = this.globalData.userData

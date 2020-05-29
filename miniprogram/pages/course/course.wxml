@@ -10,7 +10,7 @@
                 <view class="course-info">
                     <view class="course-title">{{learningCourseData[index].course_title}}</view>
                     <view class="course-date">{{learningCourseData[index].course_date}}</view>
-                    <view class="course-progress">5 节课待完成</view>
+                    <view class="course-progress">{{learningCourseData[index].course_section.length-learningCourseData[index].course_schedule}} 节课待完成</view>
                     <view data-index="{{index}}" class="startButton" bindtap="toCourseDetail">去学习</view>
                 </view>
             </view>

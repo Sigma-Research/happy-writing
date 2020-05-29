@@ -205,7 +205,7 @@ Page({
   },
   // 报名课程
   registerCourse: function () {
-    app.setUserCourse(this.initCourseData())
+    app.addUserCourse(this.initCourseData())
     app.updateUserData().then(() => console.log('报名成功'))
   },
   //

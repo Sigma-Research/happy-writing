@@ -10,7 +10,7 @@ Page({
   },
   onShow: async function (options) {
     await this.onCommunication()
-    console.log(this.data.courseData)
+    this.refactorLecturerData()
   },
   onCommunication: async function () {
     const eventChannel = this.getOpenerEventChannel()
@@ -23,6 +23,27 @@ Page({
       courseData
     })
     console.log(`设置课程课程数据为`, courseData)
+  },
+  refactorLecturerData: async function () {
+    let course_lecturer = this.data.courseData.course_lecturer
+    console.log('refactor')
+    course_lecturer = await Promise.all(course_lecturer.map(async id => {
+      const data = await this.getLecturerDataById(id)
+      console.log(1)
+      return data
+    }))
+    this.setData({
+      courseData: Object.assign(this.data.courseData, {course_lecturer})
+    })
+    console.log(this.data.courseData)
+  },
+  getLecturerDataById: async function (id) {
+    let data
+    await db.collection('t_lecturer').doc(id).get().then(res => {
+      data = res.data
+      console.log(`查询得到id为${id}的讲师数据`, data)
+    })
+    return data
   },
   toCourseLearn: function (e) {
     // const index = e.currentTarget.dataset.index
