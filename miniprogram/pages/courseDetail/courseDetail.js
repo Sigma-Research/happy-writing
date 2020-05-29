@@ -19,20 +19,20 @@ Page({
   onCommunication: async function () {
     const eventChannel = this.getOpenerEventChannel()
     await eventChannel.on('getCourseData', this.getCourseData)
+    app.eventHub.on('updateCourseLearnData', this.getCourseData)
   },
   // 获取课程数据
   getCourseData: function (e) {
-    const courseData = e.courseData
+    const {courseData} = e
     console.log('获取页面通信数据')
     this.setData({
       courseData
     })
-    console.log(`设置课程课程数据为`, courseData)
+    console.log(`设置课程数据为`, courseData)
   },
   // 重构课程日期
   refactorDate: function () {
     const startDate = this.addDurationAndDateToString(this.data.courseData.create_date, 0)
-    console.log(startDate)
     const endDate = this.addDurationAndDateToString(this.data.courseData.create_date, parseInt(this.data.courseData.course_duration))
     this.setData({
       startDate,
@@ -49,7 +49,7 @@ Page({
     this.setData({
       courseData: Object.assign(this.data.courseData, {course_lecturer})
     })
-    console.log(this.data.courseData)
+    console.log('重构讲师数据', course_lecturer)
   },
   // 查询讲师信息
   getLecturerDataById: async function (id) {

@@ -1,9 +1,13 @@
 var tool = {
-  addDurationAndDateToString: function (date, day) {
-    return new Date(date.setDate(date.getDate() + day)).toLocaleDateString()
-  }
+    getSectionStudyState: function (array) {
+        var state = true
+        array.forEach(function (item) {
+            if (!item) state = false
+    })
+        return state
+    },
 }
 // 导出对外暴露的属性
 module.exports = {
-	addDurationAndDateToString: tool.addDurationAndDateToString
+    getSectionStudyState: tool.getSectionStudyState
 }
