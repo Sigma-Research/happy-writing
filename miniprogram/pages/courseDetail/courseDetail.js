@@ -6,16 +6,21 @@ Page({
   data: {
     disableShowModelState: false,
     disableShowModelData: null,
-    courseData: null
+    courseData: null,
+    startDate: null,
+    endDate: null
   },
   onShow: async function (options) {
     await this.onCommunication()
-    this.refactorLecturerData()
+    this.refactorDate()
+    await this.refactorLecturerData()
   },
+  // 页面传递数据
   onCommunication: async function () {
     const eventChannel = this.getOpenerEventChannel()
     await eventChannel.on('getCourseData', this.getCourseData)
   },
+  // 获取课程数据
   getCourseData: function (e) {
     const courseData = e.courseData
     console.log('获取页面通信数据')
@@ -24,12 +29,21 @@ Page({
     })
     console.log(`设置课程课程数据为`, courseData)
   },
+  // 重构课程日期
+  refactorDate: function () {
+    const startDate = this.addDurationAndDateToString(this.data.courseData.create_date, 0)
+    console.log(startDate)
+    const endDate = this.addDurationAndDateToString(this.data.courseData.create_date, parseInt(this.data.courseData.course_duration))
+    this.setData({
+      startDate,
+      endDate
+    })
+  },
+  // 重构讲师信息
   refactorLecturerData: async function () {
     let course_lecturer = this.data.courseData.course_lecturer
-    console.log('refactor')
     course_lecturer = await Promise.all(course_lecturer.map(async id => {
       const data = await this.getLecturerDataById(id)
-      console.log(1)
       return data
     }))
     this.setData({
@@ -37,6 +51,7 @@ Page({
     })
     console.log(this.data.courseData)
   },
+  // 查询讲师信息
   getLecturerDataById: async function (id) {
     let data
     await db.collection('t_lecturer').doc(id).get().then(res => {
@@ -45,27 +60,22 @@ Page({
     })
     return data
   },
+  // 跳转课程学习页面
   toCourseLearn: function (e) {
-    // const index = e.currentTarget.dataset.index
-    // const coursePublicData = this.data.coursePublicData
-    // const coursePrivateData = this.data.coursePrivateData
-    // const lecturer = coursePublicData.course_lecturer
-    // const courseSectionPublicData = coursePublicData.course_section[index]
-    // const video_schedule = coursePrivateData.video_schedule[index]
-    // const date = coursePrivateData.course_date
+    const courseData = this.data.courseData
+    const index = e.currentTarget.dataset.index
     wx.navigateTo({
       url: '../courseLearn/courseLearn',
       success: (res) => {
-        res.eventChannel.emit('getCourseData', {
-          // courseSectionPublicData,
-          // video_schedule,
-          // lecturer,
-          // date
+        res.eventChannel.emit('getCourseLearnData', {
+          courseData,
+          index
         })
       }
     })
   },
-  learnDisable() {
+  // 显示提示组件
+  showTips() {
     this.setData({
       disableShowModelState: true,
       disableShowModelData: {
@@ -76,9 +86,14 @@ Page({
       }
     })
   },
+  // 隐藏提示组件
   hiddenDisableShowModel () {
     this.setData({
       disableShowModelState: false
     })
+  },
+  // 返回格式化后的增加天数的日期
+  addDurationAndDateToString: function (date, day) {
+    return new Date(date.setDate(date.getDate() + day)).toLocaleDateString()
   }
 })

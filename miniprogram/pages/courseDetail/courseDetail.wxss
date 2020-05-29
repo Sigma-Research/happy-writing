@@ -101,14 +101,17 @@
   border-bottom: 2rpx #E6E4E1 solid;
   background-color: #FFECD9;
 }
-.container .course-arrange .disable .section-middle .course-startButton {
+.container .course-arrange .course-section .course-state .state-button.disable {
+  background-color: #E6E6E6;
+  color: #999896;
+}
+.container .course-arrange .course-section.disable .section-middle .course-icon {
+  display: none;
+}
+.container .course-arrange .course-section.disable .section-middle .course-startButton {
   background-color: #E6E6E6;
   color: #999896;
   box-shadow: none;
-}
-.container .course-arrange .disable .course-state .state-button {
-  background-color: #E6E6E6;
-  color: #999896;
 }
 .container .footer {
   width: 750rpx;

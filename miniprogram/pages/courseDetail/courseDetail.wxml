@@ -1,9 +1,12 @@
 <!--miniprogram/pages/courseDetail/courseDetail.wxml-->
+<wxs src="./tool.wxs" module="tool" />
 <view class="container">
     <view class="course-info">
         <view class="course-title">{{courseData.course_title}}</view>
         <view class="course-date">
-            {{courseData.course_date}}
+            {{startDate}}
+            -
+            {{endDate}}
         </view>
         <view class="course-lecturer">
             <image class="lecturer-avatar"></image>
@@ -22,18 +25,21 @@
         <view class="section">
             <view class="section-title">课程安排</view>
             <view class="section-content">
-                <view class="course-section" wx:for="{{courseData.course_section.length}}" wx:key="unique">
+                <view class="course-section {{index > courseData.course_schedule ? 'disable' : ''}}" wx:for="{{courseData.course_section.length}}" wx:key="unique">
                     <view class="course-title">{{courseData.course_section[index].subtitle}}</view>
                     <view class="section-middle">
                         <view class="middle-left">
-                            <view class="course-date">{{courseData.course_section[index].date}}</view>
                             <view class="course-icon"></view>
                         </view>
-                        <view class="course-startButton" data-index="{{index}}" bindtap="toCourseLearn">去学习</view>
+                        <view class="course-startButton" data-index="{{index}}" bindtap="{{index > courseData.course_schedule ? 'showTips' : 'toCourseLearn'}}">去学习</view>
                     </view>
                     <view class="course-state">
-                        <view class="state-button">学习已完成</view>
-                        <view class="state-button">作业已提交</view>
+                        <view class="state-button {{tool.getSectionStudyState(courseData.course_section[index].video_schedule) ? '' : 'disable'}}">
+                            {{tool.getSectionStudyState(courseData.course_section[index].video_schedule) ? '学习已完成':'学习未完成'}}
+                        </view>
+                        <view class="state-button {{courseData.course_section[index].homework_id ? '' : 'disable'}}">
+                            {{courseData.course_section[index].homework_id ? '作业已提交' : '作业未提交'}}
+                        </view>
                     </view>
                 </view>
             </view>

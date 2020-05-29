@@ -1,0 +1,9 @@
+var tool = {
+  addDurationAndDateToString: function (date, day) {
+    return new Date(date.setDate(date.getDate() + day)).toLocaleDateString()
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+	addDurationAndDateToString: tool.addDurationAndDateToString
+}
