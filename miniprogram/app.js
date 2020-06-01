@@ -73,6 +73,7 @@ App({
       _openid: openid
     }).get().then(res => {
       returnData = res.data
+      console.log(returnData[0])
     })
     return returnData
   },

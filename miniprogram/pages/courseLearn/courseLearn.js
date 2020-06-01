@@ -85,7 +85,7 @@ Page({
     if (homeworkId){
       await db.collection('t_homework').doc(homeworkId).get().then(res => {
         homeworkState = res.data.state
-        console.log(`查询得到id为${id}的作业数据`)
+        console.log(`查询得到id为${homeworkId  }的作业数据`)
       })
     }
     this.setData({
@@ -109,13 +109,18 @@ Page({
     const homework_id = this.data.courseData.course_section[this.data.index].homework_id
     const course_id = this.data.courseData._id
     const index = this.data.index
+    const user_id = app.globalData.userData._id
+    const lecturer_id = this.data.courseData.course_lecturer[0]._id
+    console.log('跳转作业详情')
     wx.navigateTo({
       url: '../homeworkDetail/homeworkDetail',
       success: (res) => {
-        res.eventChannel.emit('getHomeworkDetail', {
+        res.eventChannel.emit('getHomeworkDetailData', {
           homework_id,
           course_id,
-          index
+          index,
+          user_id,
+          lecturer_id
         })
       }
     })
@@ -135,6 +140,7 @@ Page({
   },
   // 返回格式化后的增加天数的日期
   addDurationAndDateToString: function (date, day) {
-    return new Date(date.setDate(date.getDate() + day)).toLocaleDateString()
+    const newdate = new Date(date.valueOf())
+    return new Date(newdate.setDate(newdate.getDate() + day)).toLocaleDateString()
   }
 })

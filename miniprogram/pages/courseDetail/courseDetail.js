@@ -32,7 +32,7 @@ Page({
   },
   // 重构课程日期
   refactorDate: function () {
-    const startDate = this.addDurationAndDateToString(this.data.courseData.create_date, 0)
+    const startDate = this.data.courseData.create_date.toLocaleDateString()
     const endDate = this.addDurationAndDateToString(this.data.courseData.create_date, parseInt(this.data.courseData.course_duration))
     this.setData({
       startDate,
@@ -94,6 +94,7 @@ Page({
   },
   // 返回格式化后的增加天数的日期
   addDurationAndDateToString: function (date, day) {
-    return new Date(date.setDate(date.getDate() + day)).toLocaleDateString()
+    const newdate = new Date(date.valueOf())
+    return new Date(newdate.setDate(newdate.getDate() + day)).toLocaleDateString()
   }
 })

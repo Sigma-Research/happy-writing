@@ -7,22 +7,15 @@
         <view class="section-subtitle">
             点击按钮上传作业
         </view>
-        <button class="table-button" bindtap="test">
-            添加作业
+        <image class="homework" wx:if="{{homework_id}}">
+
+        </image>
+        <button class="table-button" bindtap="chooseImage" wx:if="{{!(homeworkData.state === 'reviewed')}}">
+            {{homework_id ? (homeworkData.state === 'submitted' ? '修改作业' : '') : '添加作业'}}
         </button>
     </view>
-    <image class="homework">
-
-    </image>
-    <button class="table-button test">
-        修改作业
-    </button>
-
 </view>
-<view class="footer">
-    <button class="table-button">
-        修改作业
-    </button>
+<view class="footer" wx:if="{{homeworkData.state === 'reviewed'}}">
     <image></image>
     <image></image>
 </view>
