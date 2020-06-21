@@ -7,8 +7,6 @@ const db = app.database()
 
 exports.main = async (event, context) => {
   const { task_id, state } = event
-  console.log(event)
-  console.log(state)
   try {
     await db
         .collection('task')

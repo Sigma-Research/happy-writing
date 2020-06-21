@@ -7,6 +7,7 @@ const db = app.database()
 exports.main = async (event, context) => {
     const { operator_id } = event
     try {
+        // set attribute
         const submittedList = await db
             .collection('task')
             .where({
@@ -19,11 +20,13 @@ exports.main = async (event, context) => {
             submittedList.data.map(async (item) => {
                 const task_id = item._id
                 const { submit_date, state, chapter_index, recommend, user_id, course_id } = item
+                // split
                 const user = await db
                     .collection('user')
                     .doc(user_id)
                     .get()
                 const user_name = user.data[0].nickname
+                // split
                 const course = await db
                     .collection('course')
                     .doc(course_id)

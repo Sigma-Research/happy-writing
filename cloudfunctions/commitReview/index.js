@@ -12,7 +12,7 @@ exports.main = async (event, context) => {
     const viewed = !(type === 'finish')
     console.log(data, state, review_date, viewed)
     try {
-        await db
+        const res = await db
             .collection('task')
             .doc(task_id)
             .update({
@@ -20,9 +20,8 @@ exports.main = async (event, context) => {
                 state: state,
                 review_date: review_date,
                 viewed: viewed
-            }).then(res => {
-                console.log(res)
             })
+        console.log(res)
         return {
             status: 200,
         }

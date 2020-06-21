@@ -8,6 +8,7 @@ const db = app.database()
 exports.main = async (event, context) => {
   const { task_id } = event
   try {
+    // delete try
     const task = await db
         .collection('task')
         .doc(task_id)
