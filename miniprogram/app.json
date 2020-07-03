@@ -1,13 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/courseLearn/courseLearn",
-    "pages/courseDetail/courseDetail",
-    "pages/course/course",
-    "pages/profile/profile",
-    "pages/coursePoster/coursePoster",
-    "pages/homeworkDetail/homeworkDetail",
-    "pages/portfolio/portfolio"
+    "pages/taskList/taskList",
+    "pages/personal/personal",
+    "pages/login/login"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -19,18 +14,18 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/taskList/taskList",
         "text": "首页"
       },
       {
-        "pagePath": "pages/course/course",
+        "pagePath": "pages/personal/personal",
         "text": "上课"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "我的"
       }
     ]
+  },
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
