@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // getTaskList
 // Parameters: { operatorID, type }
 // Response: list
+=======
+// 云函数入口文件
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
 =======
 // 云函数入口文件
 >>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
@@ -10,6 +14,7 @@ const app = tcb.init({
     env: 'happy-writing-env-id'
 })
 const db = app.database()
+<<<<<<< HEAD
 <<<<<<< HEAD
 const formatDate = (date) => {
    return new Date(date).toLocaleDateString('as-CH', 'Asia/Shanghai')
@@ -51,6 +56,8 @@ exports.main = async (event, context) => {
    return list
 }
 =======
+=======
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
 exports.main = async (event, context) => {
     const { operator_id } = event
     try {
@@ -141,5 +148,9 @@ exports.main = async (event, context) => {
             data: null
         }
     }
+<<<<<<< HEAD
+}
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
+=======
 }
 >>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777

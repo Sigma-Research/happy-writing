@@ -13,7 +13,11 @@ exports.main = async (event, context) => {
     console.log(data, state, review_date, viewed)
     try {
 <<<<<<< HEAD
+<<<<<<< HEAD
         await db
+=======
+        const res = await db
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
 =======
         const res = await db
 >>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
@@ -25,9 +29,14 @@ exports.main = async (event, context) => {
                 review_date: review_date,
                 viewed: viewed
 <<<<<<< HEAD
+<<<<<<< HEAD
             }).then(res => {
                 console.log(res)
             })
+=======
+            })
+        console.log(res)
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
 =======
             })
         console.log(res)

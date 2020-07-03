@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // getTaskDetail
 // Parameters: { taskID }
 // Response: { studentName, courseTitle, state, chapterTitle, homeworkContent, reviewData, recommend, homeworkImageURL}
+=======
+// 云函数入口文件
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
 =======
 // 云函数入口文件
 >>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
@@ -12,6 +16,7 @@ const app = tcb.init({
 const db = app.database()
 
 exports.main = async (event, context) => {
+<<<<<<< HEAD
 <<<<<<< HEAD
   const { taskID } = event
   const getTaskResult = await db
@@ -45,6 +50,8 @@ exports.main = async (event, context) => {
   }
 }
 =======
+=======
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
   const { task_id } = event
   try {
     // delete try
@@ -103,5 +110,9 @@ exports.main = async (event, context) => {
     return {
     }
   }
+<<<<<<< HEAD
+}
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
+=======
 }
 >>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
