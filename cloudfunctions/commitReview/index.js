@@ -12,7 +12,11 @@ exports.main = async (event, context) => {
     const viewed = !(type === 'finish')
     console.log(data, state, review_date, viewed)
     try {
+<<<<<<< HEAD
         await db
+=======
+        const res = await db
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
             .collection('task')
             .doc(task_id)
             .update({
@@ -20,9 +24,14 @@ exports.main = async (event, context) => {
                 state: state,
                 review_date: review_date,
                 viewed: viewed
+<<<<<<< HEAD
             }).then(res => {
                 console.log(res)
             })
+=======
+            })
+        console.log(res)
+>>>>>>> aa22483c931ff35900c8dda4b60e6a59aae7e777
         return {
             status: 200,
         }
