@@ -7,8 +7,6 @@
 }
 .container .step {
   width: 670rpx;
-  display: inline-flex;
-  flex-direction: column;
   padding: 32rpx 88rpx 0rpx;
   background-color: #FFFFFF;
   box-shadow: 0 20rpx 40rpx -8rpx #00000010;
@@ -50,8 +48,9 @@
   background-color: #FFBA19;
 }
 .container .step .submit {
-  margin: 64rpx 0;
-  align-self: center;
+  width: 288rpx;
+  margin: 64rpx auto;
+  text-align: center;
   padding: 20rpx 88rpx;
   color: #FFFFFF;
   background-color: #FFBA19;
