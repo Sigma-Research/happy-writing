@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "绑定班级"
+  "navigationBarTitleText": "绑定班级",
+  "usingComponents": {
+    "mp-icon": "/miniprogram_npm/weui-miniprogram/icon/icon"
+  }
 }

@@ -1,7 +1,42 @@
 <view class="container">
     <view class="step">
         <view class="title">
-            输入手机号
+            确认手机号
+        </view>
+        <view class="stepContent">
+            <view class="row">
+                <input type="number" placeholder="请输入手机号" class="input"></input>
+                <mp-icon icon="close2" color="black" size="{{20}}"></mp-icon>
+            </view>
+            <view class="row">
+                <input type="number" placeholder="请输入验证码" class="input"></input>
+                <view class="button">
+                    获取验证码
+                </view>
+            </view>
+        </view>
+        <view class="submit">
+            下一步
+        </view>
+    </view>
+    <view class="step">
+        <view class="title">
+            确认班级
+        </view>
+        <view class="stepContent">
+            <picker mode="selector" bindchange="changeSchool" class="row" range="{{schoolList}}">
+                学校：{{school ? school : '请选择学校'}}
+            </picker>
+            <picker mode="multiSelector" bindchange="changeGrade" class="row"  range="{{[gradeList, classList]}}" >
+                班级：{{grade ? grade : '请选择班级'}} {{class ? class : ''}}
+            </picker>
+            <view class="row">
+                姓名：
+                <input type="number" placeholder="请输入姓名"></input>
+            </view>
+        </view>
+        <view class="submit">
+            绑定
         </view>
     </view>
 </view>

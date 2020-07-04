@@ -1,3 +1,62 @@
-
+.container {
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  flex-direction: column;
+  color: #1A1918;
+}
+.container .step {
+  width: 670rpx;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 32rpx 88rpx 0rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
+  border-radius: 20rpx;
+  margin-bottom: 180rpx;
+}
+.container .step .title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 18rpx;
+  text-align: center;
+}
+.container .step .stepContent {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+}
+.container .step .stepContent .row {
+  border-bottom: #E6E4E1 1rpx solid;
+  display: flex;
+  flex-direction: row;
+  margin-top: 32rpx;
+  padding-bottom: 8rpx;
+  align-items: center;
+}
+.container .step .stepContent .row .input {
+  flex: 1;
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 22rpx 32rpx;
+  line-height: 72rpx;
+  height: 72rpx;
+}
+.container .step .stepContent .row .button {
+  font-size: 28rpx;
+  color: #FFFFFF;
+  padding: 12rpx 26rpx;
+  border-radius: 40rpx;
+  background-color: #FFBA19;
+}
+.container .step .submit {
+  margin: 64rpx 0;
+  align-self: center;
+  padding: 20rpx 88rpx;
+  color: #FFFFFF;
+  background-color: #FFBA19;
+  border-radius: 40rpx;
+  box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60;
+}
 
 /*# sourceMappingURL=login.wxss.map */
