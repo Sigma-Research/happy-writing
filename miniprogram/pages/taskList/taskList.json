@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "作业列表",
+  "usingComponents": {
+    "mp-icon": "../../components/icon/icon"
+  }
 }

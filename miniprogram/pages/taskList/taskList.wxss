@@ -1,3 +1,91 @@
-
+.container {
+  margin: 48rpx 24px 0;
+}
+.container .userData {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 16rpx 0;
+}
+.container .userData .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.container .userData .text {
+  display: inline-block;
+  font-size: 36rpx;
+}
+.container .title {
+  color: #1A1918;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.container .subtitle {
+  color: #666564;
+  font-size: 28rpx;
+}
+.container .taskList {
+  display: flex;
+  flex-direction: column;
+}
+.container .taskList .task {
+  background-color: #FFFFFF;
+  border-radius: 20rpx;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
+  margin: 20rpx 0 15rpx 0;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .taskList .task .taskContent {
+  flex: 1;
+}
+.container .taskList .task .taskContent .time {
+  color: #666564;
+  font-size: 24rpx;
+  font-weight: normal;
+}
+.container .taskList .task .taskContent .title {
+  color: #1A1918;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 20rpx 0;
+}
+.container .taskList .task .taskContent .state {
+  background-color: #FFECD9;
+  display: inline;
+  color: #F27900;
+  font-size: 24rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+}
+.container .taskList .task .button {
+  background-color: #FFBA19;
+  box-shadow: 0 8rpx 16rpx -4rpx #FFBA1A60;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  padding: 4rpx 30rpx;
+  border-radius: 24rpx;
+}
+.container .taskList .tips {
+  color: #666564;
+  font-size: 28rpx;
+  text-align: center;
+  width: 100%;
+  margin: 20rpx;
+}
+.container .taskList button {
+  background-color: #FFBA19;
+  box-shadow: 0 8rpx 16rpx -4rpx #DDBA1A60;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  padding: 20rpx 102rpx;
+  margin: 20rpx;
+  align-self: center;
+}
 
 /*# sourceMappingURL=taskList.wxss.map */

@@ -1,2 +1,31 @@
 <view class="container">
+    <view class="userData">
+        <view class="avatar">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="text">Hi！</view>
+        <open-data class="text" type="userNickName" lang="zh_CN"></open-data>
+    </view>
+    <view class="subtitle">记得按时完成作业哦！</view>
+    <view class="taskList">
+        <view class="task" wx:for="{{taskList}}" wx:key="index">
+            <view class="taskContent">
+                <view class="time">{{item.time}}</view>
+                <view class="title">{{item.title}}</view>
+                <view class="state">{{item.state}}</view>
+            </view>
+            <view class="button">
+                去查看
+            </view>
+        </view>
+        <view class="tips">
+            目前还没有作业练习哦!
+        </view>
+        <view class="tips">
+            绑定班级后才可以查询对应班级的作业哦！
+        </view>
+        <button>
+            去绑定
+        </button>
+    </view>
 </view>
