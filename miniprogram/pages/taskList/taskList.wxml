@@ -14,7 +14,7 @@
                 <view class="title">{{item.title}}</view>
                 <view class="state">{{item.state}}</view>
             </view>
-            <view class="button">
+            <view class="button" bindtap="toTaskDetail">
                 去查看
             </view>
         </view>

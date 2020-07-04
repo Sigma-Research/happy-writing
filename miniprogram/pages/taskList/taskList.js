@@ -3,7 +3,7 @@ Page({
     taskList: [
       {
         time: '7月6日 星期五',
-        title: '字帖练习任务1',
+        title: '字帖一订正任务1',
         state: '正在进行',
       },
       {
@@ -45,6 +45,11 @@ Page({
   toLogin () {
     wx.navigateTo({
       url: '../login/login'
+    })
+  },
+  toTaskDetail () {
+    wx.navigateTo({
+      url: '../taskDetail/taskDetail'
     })
   }
 })
