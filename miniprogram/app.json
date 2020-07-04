@@ -12,12 +12,18 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#1f88d9",
     "list": [
       {
+        "iconPath": "images/taskListIconUnselected.png",
+        "selectedIconPath": "images/taskListIconSelected.png",
         "pagePath": "pages/taskList/taskList",
         "text": "作业列表"
       },
       {
+        "iconPath": "images/personalIconUnseleted.png",
+        "selectedIconPath": "images/personalIconSelected.png",
         "pagePath": "pages/personal/personal",
         "text": "个人中心"
       }
