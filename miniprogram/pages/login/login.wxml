@@ -1,2 +1,7 @@
 <view class="container">
+    <view class="step">
+        <view class="title">
+            输入手机号
+        </view>
+    </view>
 </view>

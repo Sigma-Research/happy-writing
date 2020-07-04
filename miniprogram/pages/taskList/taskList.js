@@ -41,5 +41,10 @@ Page({
   },
   onShareAppMessage () {
 
+  },
+  toLogin () {
+    wx.navigateTo({
+      url: '../login/login'
+    })
   }
 })

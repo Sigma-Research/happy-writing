@@ -24,7 +24,7 @@
         <view class="tips">
             绑定班级后才可以查询对应班级的作业哦！
         </view>
-        <button>
+        <button bindtap="toLogin">
             去绑定
         </button>
     </view>
