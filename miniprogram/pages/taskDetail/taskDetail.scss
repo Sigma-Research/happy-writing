@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  .card {
+    margin: 32rpx 40rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+    box-shadow: 0 20rpx 40rpx -8rpx #00000010;
+    padding: 32rpx;
+    .title {
+      color: #1A1918;
+      font-size: 40rpx;
+      font-weight: bold;
+    }
+    .time {
+      margin: 32rpx 0 36rpx 0;
+      color: #999896;
+      font-size: 24rpx;
+    }
+    .teacherWrapper {
+      display: flex;
+      flex-direction: row;
+      .teacher {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .avatar {
+          width: 64rpx;
+          height: 64rpx;
+          border-radius: 50%;
+          background-color: #999896;
+          margin-right: 16rpx;
+        }
+        .nameWrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-right: 16rpx;
+          .name {
+            color: #1A1918;
+            font-size: 24rpx;
+          }
+          .title {
+            font-size: 24rpx;
+            font-weight: normal;
+            color: #999896;
+          }
+        }
+      }
+    }
+  }
+  .section {
+    margin: 32rpx 40rpx;
+    .title {
+      color: #1A1918;
+      font-size: 40rpx;
+      font-weight: bold;
+    }
+    .content {
+      color: #666564;
+      font-size: 32rpx;
+      margin: 20rpx 0;
+    }
+  }
+  .button {
+    border-radius: 40rpx;
+    box-shadow: 0 8rpx 16rpx -4rpx #ffba1a60;
+    background-color: #FFBA19;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 28rpx;
+    padding: 20rpx 54rpx;
+    align-self: center;
+  }
+  .tips {
+    text-align: center;
+    font-size: 28rpx;
+    color: #999896;
+    margin: 32rpx;
+  }
+}
