@@ -1,2 +1,6 @@
-<!--miniprogram/pages/myTask/myTask.wxml-->
-<text>miniprogram/pages/myTask/myTask.wxml</text>
+<view class="container">
+    <image src="cloud://happy-writing-env-id.6861-happy-writing-env-id-1302194501/test.png" mode="widthFix"></image>
+    <view class="button">
+        重新上传作业
+    </view>
+</view>

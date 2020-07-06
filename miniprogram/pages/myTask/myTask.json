@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "我的作业",
+  "usingComponents": {
+  }
 }
