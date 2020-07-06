@@ -1,9 +1,11 @@
 {
   "pages": [
-    "pages/myTask/myTask",
-    "pages/taskDetail/taskDetail",
+    "pages/reviewReport/reviewReport",
     "pages/taskList/taskList",
-    "pages/login/login"
+    "pages/taskDetail/taskDetail",
+    "pages/login/login",
+    "pages/myTask/myTask",
+    "pages/revisalDetail/revisalDetail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
