@@ -1,6 +1,6 @@
 Page({
   data: {
-    tab: 'revise'
+    
   },
   onLoad (options) {
 

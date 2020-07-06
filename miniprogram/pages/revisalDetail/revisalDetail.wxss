@@ -1,3 +1,81 @@
-
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.container .card {
+  margin: 32rpx 40rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  box-shadow: 0 20rpx 40rpx -8rpx #00000010;
+  padding: 32rpx;
+}
+.container .card .title {
+  color: #1A1918;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.container .card .content {
+  color: #999896;
+  font-size: 28rpx;
+}
+.container .card .time {
+  font-size: 24rpx;
+  margin: 28rpx 0 20rpx 0;
+}
+.container .section {
+  margin: 0 40rpx;
+}
+.container .section .title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.container .section .content {
+  margin-bottom: 35rpx;
+}
+.container .section .content .text {
+  border-left: 10rpx solid #FFBA19;
+  padding-left: 20rpx;
+  color: #1A1918;
+  font-size: 28rpx;
+}
+.container .section .content .works {
+  margin: 20px 0;
+  width: 670rpx;
+}
+.container .section .content .works .scroll-img {
+  width: 670rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.container .section .content .works .scroll-img image {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #999896;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.container .section .content .works .step {
+  margin: 30rpx 0;
+  color: #1A1918;
+  font-size: 28rpx;
+}
+.container .button {
+  border-radius: 40rpx;
+  box-shadow: 0 8rpx 16rpx -4rpx #ffba1a60;
+  background-color: #FFBA19;
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 28rpx;
+  padding: 20rpx 54rpx;
+  align-self: center;
+  font-weight: bold;
+}
+.container .tips {
+  text-align: center;
+  font-size: 28rpx;
+  color: #999896;
+  margin: 32rpx;
+}
 
 /*# sourceMappingURL=revisalDetail.wxss.map */

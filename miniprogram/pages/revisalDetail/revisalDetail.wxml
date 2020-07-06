@@ -1,3 +1,39 @@
-<view class="contain">
-
+<view class="container">
+    <view class="card">
+        <view class="title">字帖练习任务2订正</view>
+        <view class="content time">时间： 7月6日 星期五</view>
+        <view class="content">
+            本次作业中仍有部分字有待提升，将本次作业书写不规范字练习完成至规范水平以后，拍照上传，加油哦！
+        </view>
+    </view>
+    <view class="section">
+        <view class="title">
+            老师寄语
+        </view>
+        <view class="content">
+            <view class="text">
+                <view>业精于勤，荒于嬉；</view>
+                <view>今天的努力总有一天会开花结果。</view>
+            </view>
+        </view>
+    </view>
+    <view class="section">
+        <view class="title">如何订正</view>
+        <view class="content">
+            下列单字有待提高，仍需练习。
+            <view class="works">
+                <scroll-view scroll-x="true" class="scroll-img" style="width: 100%">
+                    <image wx:for="{{5}}"/>
+                </scroll-view>
+                <view class="step">
+                    <view>1. 让孩子端正坐姿以及调整到正确的握笔姿势。</view>
+                    <view>2. 查看字帖和找出孩子书写不规范的地方，纠正并指导孩子在田字格进行书写练习。</view>
+                    <view>3. 练习规范以后在田子格中将不规范的字书写一遍后拍照上传。</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="button" bindtap="uploadTask">点击添加作业</view>
+    <view class="tips" bindtap="showTips">如何添加作业</view>
+    <view class="button" bindtap="toMytask">查看已提交作业</view>
 </view>
