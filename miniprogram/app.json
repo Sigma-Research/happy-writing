@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/revisalDetail/revisalDetail",
-    "pages/reviewReport/reviewReport",
     "pages/taskList/taskList",
+    "pages/revisalReport/revisalReport",
+    "pages/revisalReportPremium/revisalReportPremium",
+    "pages/revisalDetail/revisalDetail",
     "pages/taskDetail/taskDetail",
     "pages/login/login",
     "pages/myTask/myTask"

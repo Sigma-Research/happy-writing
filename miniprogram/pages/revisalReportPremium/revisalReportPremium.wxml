@@ -1,0 +1,65 @@
+<view class="container">
+    <view class="card">
+        <view class="teacher">
+            <view class="avatar"></view>
+            <view class="name">刘小鹏老师</view>
+        </view>
+        <view class="introduce">
+            <view class="content">
+                <image class="icon" src="../../static/image/major.png"></image>
+                山东大学汉字研究专业毕业
+            </view>
+            <view class="content">
+                <image class="icon" src="../../static/image/experience.png"></image>
+                三年书法教育工作经验
+            </view>
+            <view class="content">
+                <image class="icon" src="../../static/image/skill.png"></image>
+                擅长硬币书法教学指导
+            </view>
+        </view>
+    </view>
+    <view class="navigation">
+        <view class="tab">
+            <view class="tabItem {{tab === 'revise' ? 'active' : ''}}" data-tab="revise" bindtap="changeTab">作业批改</view>
+            <view class="tabItem {{tab === 'review' ? 'active' : ''}}" data-tab="review" bindtap="changeTab">作业预览</view>
+        </view>
+        <view class="content" wx:if="{{tab === 'revise'}}">
+            <view class="section">
+                <view class="title">作业情况</view>
+                <view class="rank">
+                    <view class="item">
+                        <view class="itemValue">
+                            <view class="bold">90</view>分
+                        </view>
+                        <view>总体评价</view>
+                    </view>
+                    <view class="item">
+                        <view class="itemValue">
+                            <view class="bold">5</view>个
+                        </view>
+                        <view>比较优秀</view>
+                    </view>
+                    <view class="item">
+                        <view class="itemValue">
+                            <view class="bold">3</view>个
+                        </view>
+                        <view>有待提升</view>
+                    </view>
+                </view>
+            </view>
+            <view class="section">
+                <view class="title">名师点评</view>
+                <button>查看名师点评</button>
+            </view>
+            <view class="tips">
+                <view>卷面分很重要哦！</view>
+                <view>请家长引导孩子对不规范的字进行订正。</view>
+            </view>
+            <button bindtap="toRevisalDetail">去订正</button>
+        </view>
+        <view class="content" wx:else>
+            <image src="cloud://happy-writing-env-id.6861-happy-writing-env-id-1302194501/test.png" mode="widthFix"></image>
+        </view>
+    </view>
+</view>
